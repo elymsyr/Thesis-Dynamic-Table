@@ -1,0 +1,83 @@
+{
+    "Dynamic Table": {
+        "checkpoints": [
+            {
+                "steps": 499960,
+                "file_path": "/content/drive/MyDrive/results/b090test/Dynamic Table/Dynamic Table-499960.onnx",
+                "reward": -0.06675973787014702,
+                "creation_time": 1715210679.2664123,
+                "auxillary_file_paths": [
+                    "/content/drive/MyDrive/results/b090test/Dynamic Table/Dynamic Table-499960.pt"
+                ]
+            },
+            {
+                "steps": 999971,
+                "file_path": "/content/drive/MyDrive/results/b090test/Dynamic Table/Dynamic Table-999971.onnx",
+                "reward": 0.031052932780432075,
+                "creation_time": 1715212430.9511003,
+                "auxillary_file_paths": [
+                    "/content/drive/MyDrive/results/b090test/Dynamic Table/Dynamic Table-999971.pt"
+                ]
+            },
+            {
+                "steps": 1499966,
+                "file_path": "/content/drive/MyDrive/results/b090test/Dynamic Table/Dynamic Table-1499966.onnx",
+                "reward": 0.5806864999134892,
+                "creation_time": 1715214208.4914105,
+                "auxillary_file_paths": [
+                    "/content/drive/MyDrive/results/b090test/Dynamic Table/Dynamic Table-1499966.pt"
+                ]
+            },
+            {
+                "steps": 1999951,
+                "file_path": "/content/drive/MyDrive/results/b090test/Dynamic Table/Dynamic Table-1999951.onnx",
+                "reward": 0.3564873563309741,
+                "creation_time": 1715216005.2347019,
+                "auxillary_file_paths": [
+                    "/content/drive/MyDrive/results/b090test/Dynamic Table/Dynamic Table-1999951.pt"
+                ]
+            },
+            {
+                "steps": 2499938,
+                "file_path": "/content/drive/MyDrive/results/b090test/Dynamic Table/Dynamic Table-2499938.onnx",
+                "reward": 0.5048347605269454,
+                "creation_time": 1715217817.9285119,
+                "auxillary_file_paths": [
+                    "/content/drive/MyDrive/results/b090test/Dynamic Table/Dynamic Table-2499938.pt"
+                ]
+            },
+            {
+                "steps": 2999988,
+                "file_path": "/content/drive/MyDrive/results/b090test/Dynamic Table/Dynamic Table-2999988.onnx",
+                "reward": 0.32271213026251644,
+                "creation_time": 1715219619.4729056,
+                "auxillary_file_paths": [
+                    "/content/drive/MyDrive/results/b090test/Dynamic Table/Dynamic Table-2999988.pt"
+                ]
+            },
+            {
+                "steps": 3000042,
+                "file_path": "/content/drive/MyDrive/results/b090test/Dynamic Table/Dynamic Table-3000042.onnx",
+                "reward": 0.4569926692101245,
+                "creation_time": 1715219619.550741,
+                "auxillary_file_paths": [
+                    "/content/drive/MyDrive/results/b090test/Dynamic Table/Dynamic Table-3000042.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 3000042,
+            "file_path": "/content/drive/MyDrive/results/b090test/Dynamic Table.onnx",
+            "reward": 0.4569926692101245,
+            "creation_time": 1715219619.550741,
+            "auxillary_file_paths": [
+                "/content/drive/MyDrive/results/b090test/Dynamic Table/Dynamic Table-3000042.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.0.0",
+        "torch_version": "2.2.1+cu121"
+    }
+}

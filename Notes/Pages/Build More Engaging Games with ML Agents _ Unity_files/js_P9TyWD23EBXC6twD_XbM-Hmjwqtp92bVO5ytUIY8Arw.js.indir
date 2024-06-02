@@ -1,0 +1,141 @@
+(function ($, Drupal, drupalSettings, window) {
+  'use strict';
+
+  // Get the html for the overlay.
+  var blockedOverlay = drupalSettings.blockedVideoOverlay;
+
+  // Targeting category specific code.
+  window.targetingCategory = function () {
+    var vidyardLink;
+
+    // Remove all iframes with YouTube as provider.
+    $('iframe[src*="youtube"]').not('.component-gallery-center iframe[src*="youtube"], .component-text-iframe__frame iframe[src*="youtube"], .hero-video-right iframe[src*="youtube"]').remove();
+
+    // Block hero decks with YouTube and vidyard providers set as background video.
+    $('.hero-video-wrapper').each(function () {
+      var videoProvider = $(this).data('videoProvider');
+
+      // Remove videos differently depending on provider.
+      if (videoProvider === 'youtube') {
+        $(this).removeData('videoProvider');
+        $(this).addClass('hero-video-wrapper-processed');
+        $(this).children().remove();
+      } else if (videoProvider === 'vidyard') {
+        $(this).remove();
+      }
+    });
+
+    // Handle slick on /madewith/adam and heros with video embeds.
+    $('.component-gallery-center iframe[src*="youtube"], .hero-video-right iframe[src*="youtube"]').each(function () {
+      $(this).parent().append(blockedOverlay.targeting);
+      $(this).remove();
+    });
+
+    // Handle text&iframe.
+    $('.component-text-iframe__frame iframe[src*="youtube"]').each(function () {
+      $(this).parent().append(blockedOverlay.targeting);
+      $(this).next('.blocked-video__overlay').css({
+        position: 'static',
+        'min-height': $(this).height() + 'px'
+      });
+      $(this).remove();
+    });
+
+    // Handle all generic fancy-video implementations.
+    $('.fancy-video').not('.component-card__link .fancy-video, .component-card__image .fancy-video').each(function () {
+      if ($(this).attr('href').match('youtube')) {
+        // Handle both cases when behaviors.Fancybox is loaded before or
+        $(this).fancybox({
+          beforeLoad: function () {
+            return false;
+          }
+        });
+        $(this).append(blockedOverlay.targeting);
+      }
+    });
+
+    // Handle image cards with fancy-box videos.
+    $('.component-card__image .fancy-video').each(function () {
+      $(this).fancybox({
+        beforeLoad: function () {
+          return false;
+        }
+      });
+      $(this).append(blockedOverlay.targeting);
+    });
+
+    // Handle simple links, redirect to href instead.
+    $('.component-card__link .fancy-video').each(function () {
+      $(this).fancybox({
+        beforeLoad: function () {
+          return false;
+        }
+      });
+      $(this).addClass('targeting');
+    });
+
+    // Block videos in section-trailers.
+    $('.section-trailer .yt-video').each(function () {
+      $(this).siblings('.section-trailer-overlay').remove();
+      $(this).append(blockedOverlay.targeting);
+    });
+
+    // Target vidyard implementation with the overlay.
+    $('.vidyard-player-embed').each(function () {
+      $(this).removeAttr('data-uuid');
+      // We have 3 vidyard implementations. Handle all of them.
+      vidyardLink = $(this).siblings('a');
+
+      if (vidyardLink.length && vidyardLink.hasClass('vidyard-video')) {
+        vidyardLink.append(blockedOverlay.targeting);
+      } else if (vidyardLink.length && !vidyardLink.hasClass('vidyard-video')) {
+        vidyardLink.addClass('vidyard targeting');
+        if ($(this).parent().hasClass('vidyard-wrapper')) {
+          $(this).parent().append(blockedOverlay.targeting);
+          $(this).parent().find('.blocked-video__overlay').css({ height: $(this).siblings('img').height() });
+        }
+      } else {
+        $(this).after(blockedOverlay.targeting);
+      }
+    });
+  };
+
+  // Functional category specific code.
+  window.functionalCategory = function () {
+    // Handle slick implementation on document ready - /madewith.
+    $('#player').remove();
+
+    // Block videos in section-trailers.
+    $('.section-trailer .vm-video').each(function () {
+      $(this).siblings('.section-trailer-overlay').remove();
+      $(this).append(blockedOverlay.functional);
+    });
+
+    // Remove all iframes with Vimeo provider.
+    $('iframe[src*="vimeo"]').remove();
+
+    // Block hero decks with vimeo provider set as background video.
+    $('.hero-video-wrapper').each(function () {
+      if ($(this).data('videoProvider') === 'vimeo') {
+        $(this).removeData('videoProvider');
+        $(this).addClass('hero-video-wrapper-processed');
+        $(this).children().remove();
+      }
+    });
+  };
+
+  Drupal.behaviors.cms_cmp_videoBlock = {
+    attach: function (context) {
+      $(window, context).once('cms_cmp_videoBlock').each(function () {
+        var currentWindow = $(this).get(0);
+
+        if (currentWindow.blockStatus) {
+          $(currentWindow.blockCategory).each(function (index, category) {
+            currentWindow[category]();
+          });
+        }
+      });
+    }
+  };
+}(jQuery, Drupal, drupalSettings, window));
+;

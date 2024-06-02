@@ -1,0 +1,56 @@
+{
+    "Dynamic Table": {
+        "checkpoints": [
+            {
+                "steps": 499991,
+                "file_path": "results/b074_size8_Config02/Dynamic Table/Dynamic Table-499991.onnx",
+                "reward": 0.7955775564325943,
+                "creation_time": 1711820945.2845168,
+                "auxillary_file_paths": [
+                    "results/b074_size8_Config02/Dynamic Table/Dynamic Table-499991.pt"
+                ]
+            },
+            {
+                "steps": 999972,
+                "file_path": "results/b074_size8_Config02/Dynamic Table/Dynamic Table-999972.onnx",
+                "reward": 1.1966535022636111,
+                "creation_time": 1711826326.516534,
+                "auxillary_file_paths": [
+                    "results/b074_size8_Config02/Dynamic Table/Dynamic Table-999972.pt"
+                ]
+            },
+            {
+                "steps": 1499942,
+                "file_path": "results/b074_size8_Config02/Dynamic Table/Dynamic Table-1499942.onnx",
+                "reward": 1.6067110840164232,
+                "creation_time": 1711831642.0850496,
+                "auxillary_file_paths": [
+                    "results/b074_size8_Config02/Dynamic Table/Dynamic Table-1499942.pt"
+                ]
+            },
+            {
+                "steps": 1538991,
+                "file_path": "results/b074_size8_Config02/Dynamic Table/Dynamic Table-1538991.onnx",
+                "reward": 1.788485821358005,
+                "creation_time": 1711832051.614816,
+                "auxillary_file_paths": [
+                    "results/b074_size8_Config02/Dynamic Table/Dynamic Table-1538991.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 1538991,
+            "file_path": "results/b074_size8_Config02/Dynamic Table.onnx",
+            "reward": 1.788485821358005,
+            "creation_time": 1711832051.614816,
+            "auxillary_file_paths": [
+                "results/b074_size8_Config02/Dynamic Table/Dynamic Table-1538991.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.0.0",
+        "torch_version": "2.2.1+cu121"
+    }
+}

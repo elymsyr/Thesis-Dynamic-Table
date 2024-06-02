@@ -1,0 +1,18 @@
+Mono path[0] = '/content/drive/MyDrive/builds/b076/build_Data/Managed'
+Mono config path = '/content/drive/MyDrive/builds/b076/build_Data/MonoBleedingEdge/etc'
+Preloaded 'lib_burst_generated.so'
+Preloaded 'libgrpc_csharp_ext.x64.so'
+Found 1 interfaces on host : 0) 172.28.0.12
+Player connection [136202868539264] Multi-casting "[IP] 172.28.0.12 [Port] 55005 [Flags] 2 [Guid] 2415008182 [EditorId] 3664718881 [Version] 1048832 [Id] LinuxServer(43,172.28.0.12) [Debug] 0 [PackageName] LinuxServer [ProjectName] DynamicTable" to [225.0.0.222:54997]...
+
+[Physics::Module] Initialized MultithreadedJobDispatcher with 1 workers.
+Unable to load player prefs
+Initialize engine version: 2022.3.20f1 (61c2feb0970d)
+[Subsystems] Discovering subsystems at path /content/drive/MyDrive/builds/b076/build_Data/UnitySubsystems
+Forcing GfxDevice: Null
+GfxDevice: creating device client; threaded=0; jobified=0
+NullGfxDevice:
+    Version:  NULL 1.0 [1.0]
+    Renderer: Null Device
+    Vendor:   Unity Technologies
+Begin MonoManager ReloadAssembly

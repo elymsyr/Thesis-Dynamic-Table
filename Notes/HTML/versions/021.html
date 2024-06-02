@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>021</title>
+    <link href="..\style.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="top-left">
+      <a onclick="scrollToTop()">Go to Top</a>
+      <a onclick="shrunk()">Shrunk</a>
+      <a onclick="readCurrentHTMLFileAndSave()">Save</a>
+      <a href="../index.html" id="header">Back to Versions</a>
+    </div><br><br><br>
+    <h1>
+      <a class="content-header" onclick="toggleAccordion(this, 1)">021</a>
+    </h1>
+    <div class="accordion-content">
+      <ol>
+        <li>
+          <a href="#notes" id="OLnotes">Notes</a>
+        </li>
+        <li id="OLreward">
+          <a href="#reward">Reward</a>
+        </li>
+        <li id="OLhowworks">
+          <a href="#howworks">How Works</a>
+        </li>
+        <li id="OLgraphs">
+          <a href="#graphs">Graphs</a>
+        </li>
+      </ol>
+    </div>
+    <b class="content-header" onclick="toggleAccordion(this, 2)">
+      <h2>
+        <a id="notes">Notes</a>
+      </h2>
+    </b>
+    <div class="accordion-content" id="textnotes">
+      <textarea cols="50" id="textAreaNotes" placeholder="Type or insert text here..." rows="5"></textarea>
+      <button onclick="createParagraph('textnotes', 'textAreaNotes')">Insert Text</button>
+    </div>
+    <b>
+      <h2 id="reward">
+        <a class="content-header" onclick="toggleAccordion(this, 3)">Principle &amp; Reward</a>
+      </h2>
+    </b>
+    <div class="accordion-content" id="textreward">
+      <textarea cols="50" id="textAreaReward" placeholder="Type or insert text here..." rows="5"></textarea>
+      <button onclick="createParagraph('textreward', 'textAreaReward')">Insert Text</button>
+    </div>
+    <b>
+      <h2 id="howworks">
+        <a class="content-header" onclick="toggleAccordion(this, 4)">How Works</a>
+      </h2>
+    </b>
+    <div class="accordion-content">
+      <div>
+        <ul>
+          <li style="display:flex;justify-content: flex-start;">
+            <a href="..\..\Versions\021\Files\Scripts\configuration.yaml" target="_blank">configuration.yaml</a>
+            <p class="underline" onclick="toggleAccordion(this, 5)" style="margin:0px 10px;color:#919191;">show code</p>
+          </li>
+          <textarea class="accordion-content" cols="120" readonly="readonly" rows="20">default_settings: null
+behaviors:
+  AgentBehavior:
+    trainer_type: ppo
+    hyperparameters:
+      batch_size: 1024
+      buffer_size: 10240
+      learning_rate: 0.0003
+      beta: 0.005
+      epsilon: 0.2
+      lambd: 0.95
+      num_epoch: 3
+      shared_critic: false
+      learning_rate_schedule: linear
+      beta_schedule: linear
+      epsilon_schedule: linear
+    network_settings:
+      normalize: false
+      hidden_units: 256
+      num_layers: 3
+      vis_encode_type: simple
+      memory: null
+      goal_conditioning_type: hyper
+      deterministic: false
+    reward_signals:
+      extrinsic:
+        gamma: 0.99
+        strength: 1.0
+        network_settings:
+          normalize: false
+          hidden_units: 256
+          num_layers: 3
+          vis_encode_type: simple
+          memory: null
+          goal_conditioning_type: hyper
+          deterministic: false
+    init_path: null
+    keep_checkpoints: 5
+    checkpoint_interval: 500000
+    max_steps: 10000000
+    time_horizon: 64
+    summary_freq: 10000
+    threaded: false
+    self_play: null
+    behavioral_cloning: null
+env_settings:
+  env_path: Builds\0.2.1\MLProject.exe
+  env_args: null
+  base_port: 5005
+  num_envs: 3
+  num_areas: 1
+  seed: -1
+  max_lifetime_restarts: 10
+  restarts_rate_limit_n: 1
+  restarts_rate_limit_period_s: 60
+engine_settings:
+  width: 84
+  height: 84
+  quality_level: 5
+  time_scale: 20.0
+  target_frame_rate: -1
+  capture_frame_rate: 60
+  no_graphics: true
+environment_parameters: null
+checkpoint_settings:
+  run_id: 0.2.1-02
+  initialize_from: null
+  load_model: false
+  resume: true
+  force: false
+  train_model: false
+  inference: false
+  results_dir: results
+torch_settings:
+  device: null
+debug: false
+</textarea>
+          <li style="display:flex;justify-content: flex-start;">
+            <a href="..\..\Versions\021\Files\Scripts\dynamicTable.cs" target="_blank">dynamicTable.cs</a>
+            <p class="underline" onclick="toggleAccordion(this, 6)" style="margin:0px 10px;color:#919191;">show code</p>
+          </li>
+          <textarea class="accordion-content" cols="120" readonly="readonly" rows="20">    public void triggerReset(){
+        lastReward = -10;
+        AddReward(-10f);
+    }
+
+    private float rewardCalculate(float point)
+    {
+        float reward;
+        if (point == 0){
+            reward = (actionLimit-actionCount)/(startDistance*5)+10f;
+            win++;
+        }
+        else{
+            reward = ((startDistance-targetCloseness())*10f/startDistance) - 10f;
+        }
+        lastReward = reward;
+        return reward;
+    }    </textarea>
+        </ul>
+      </div>
+    </div>
+    <b class="content-header">
+      <h2 id="graphs">
+        <a>Graphs</a>
+      </h2>
+    </b>
+    <div>
+      <h3>Environment:</h3>
+      <div style="display: flex;flex-wrap: wrap;gap: .1px;width: 100%;align-items: center;text-align: center;">
+        <div class="tables" style="width: 26%;padding: 0px;">
+          <h4 style="margin: 0px 0px 12px 0px;">Cumulative Reward</h4>
+          <img src="..\..\Versions\021\Environment\CumulativeReward__021.png" style="margin: 0;border:0;" width="100%">
+        </div>
+        <div class="tables" style="width: 26%;padding: 0px;">
+          <h4 style="margin: 0px 0px 12px 0px;">Episode Length</h4>
+          <img src="..\..\Versions\021\Environment\EpisodeLength__021.png" style="margin: 0;border:0;" width="100%">
+        </div>
+      </div>
+      <h3>Losses:</h3>
+      <div style="display: flex;flex-wrap: wrap;gap: .1px;width: 100%;align-items: center;text-align: center;">
+        <div class="tables" style="width: 26%;padding: 0px;">
+          <h4 style="margin: 0px 0px 12px 0px;">Policy Loss</h4>
+          <img src="..\..\Versions\021\Losses\PolicyLoss__021.png" style="margin: 0;border:0;" width="100%">
+        </div>
+        <div class="tables" style="width: 26%;padding: 0px;">
+          <h4 style="margin: 0px 0px 12px 0px;">Value Loss</h4>
+          <img src="..\..\Versions\021\Losses\ValueLoss__021.png" style="margin: 0;border:0;" width="100%">
+        </div>
+      </div>
+      <h3>Policy:</h3>
+      <div style="display: flex;flex-wrap: wrap;gap: .1px;width: 100%;align-items: center;text-align: center;">
+        <div class="tables" style="width: 26%;padding: 0px;">
+          <h4 style="margin: 0px 0px 12px 0px;">Beta</h4>
+          <img src="..\..\Versions\021\Policy\Beta__021.png" style="margin: 0;border:0;" width="100%">
+        </div>
+        <div class="tables" style="width: 26%;padding: 0px;">
+          <h4 style="margin: 0px 0px 12px 0px;">Entropy</h4>
+          <img src="..\..\Versions\021\Policy\Entropy__021.png" style="margin: 0;border:0;" width="100%">
+        </div>
+        <div class="tables" style="width: 26%;padding: 0px;">
+          <h4 style="margin: 0px 0px 12px 0px;">Epsilon</h4>
+          <img src="..\..\Versions\021\Policy\Epsilon__021.png" style="margin: 0;border:0;" width="100%">
+        </div>
+        <div class="tables" style="width: 26%;padding: 0px;">
+          <h4 style="margin: 0px 0px 12px 0px;">Extrinsic Reward</h4>
+          <img src="..\..\Versions\021\Policy\ExtrinsicReward__021.png" style="margin: 0;border:0;" width="100%">
+        </div>
+        <div class="tables" style="width: 26%;padding: 0px;">
+          <h4 style="margin: 0px 0px 12px 0px;">Extrinsic Value Estimate</h4>
+          <img src="..\..\Versions\021\Policy\ExtrinsicValueEstimate__021.png" style="margin: 0;border:0;" width="100%">
+        </div>
+        <div class="tables" style="width: 26%;padding: 0px;">
+          <h4 style="margin: 0px 0px 12px 0px;">Learning Rate</h4>
+          <img src="..\..\Versions\021\Policy\LearningRate__021.png" style="margin: 0;border:0;" width="100%">
+        </div>
+      </div>
+    </div>
+    <script src="..\script.js" type="text/javascript"></script>
+  </body>
+</html>

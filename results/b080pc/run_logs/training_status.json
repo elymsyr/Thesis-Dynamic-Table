@@ -1,0 +1,47 @@
+{
+    "Dynamic Table": {
+        "checkpoints": [
+            {
+                "steps": 599956,
+                "file_path": "results\\b080pc\\Dynamic Table\\Dynamic Table-599956.onnx",
+                "reward": -0.28497325305075366,
+                "creation_time": 1714041553.8429325,
+                "auxillary_file_paths": [
+                    "results\\b080pc\\Dynamic Table\\Dynamic Table-599956.pt"
+                ]
+            },
+            {
+                "steps": 1199962,
+                "file_path": "results\\b080pc\\Dynamic Table\\Dynamic Table-1199962.onnx",
+                "reward": 1.3133268597142753,
+                "creation_time": 1714048145.434889,
+                "auxillary_file_paths": [
+                    "results\\b080pc\\Dynamic Table\\Dynamic Table-1199962.pt"
+                ]
+            },
+            {
+                "steps": 1257637,
+                "file_path": "results\\b080pc\\Dynamic Table\\Dynamic Table-1257637.onnx",
+                "reward": 1.1501105859036176,
+                "creation_time": 1714048821.7836926,
+                "auxillary_file_paths": [
+                    "results\\b080pc\\Dynamic Table\\Dynamic Table-1257637.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 1257637,
+            "file_path": "results\\b080pc\\Dynamic Table.onnx",
+            "reward": 1.1501105859036176,
+            "creation_time": 1714048821.7836926,
+            "auxillary_file_paths": [
+                "results\\b080pc\\Dynamic Table\\Dynamic Table-1257637.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.30.0",
+        "torch_version": "2.2.1"
+    }
+}

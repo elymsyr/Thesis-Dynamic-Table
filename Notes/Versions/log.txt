@@ -1,0 +1,24 @@
+ERROR: Losses/Policy+Loss
+  PolicyLoss__b090rereremaze: http://localhost:6006/experiment/defaultExperimentId/data/plugin/scalars/scalars?tag=Losses%2FPolicy+Loss&run=b090rereremaze%5CDynamic+Table&format=csv  PATH -> (Versions\b090rereremaze\Losses)
+ERROR: Losses/Value+Loss
+  ValueLoss__b090rereremaze: http://localhost:6006/experiment/defaultExperimentId/data/plugin/scalars/scalars?tag=Losses%2FValue+Loss&run=b090rereremaze%5CDynamic+Table&format=csv  PATH -> (Versions\b090rereremaze\Losses)
+ERROR: Policy/Beta
+  Beta__b090rereremaze: http://localhost:6006/experiment/defaultExperimentId/data/plugin/scalars/scalars?tag=Policy%2FBeta&run=b090rereremaze%5CDynamic+Table&format=csv  PATH -> (Versions\b090rereremaze\Policy)
+ERROR: Policy/Epsilon
+  Epsilon__b090rereremaze: http://localhost:6006/experiment/defaultExperimentId/data/plugin/scalars/scalars?tag=Policy%2FEpsilon&run=b090rereremaze%5CDynamic+Table&format=csv  PATH -> (Versions\b090rereremaze\Policy)
+ERROR: Policy/Learning+Rate
+  LearningRate__b090rereremaze: http://localhost:6006/experiment/defaultExperimentId/data/plugin/scalars/scalars?tag=Policy%2FLearning+Rate&run=b090rereremaze%5CDynamic+Table&format=csv  PATH -> (Versions\b090rereremaze\Policy)
+ERROR: PolicyLoss__b090rereremaze
+  [Errno 2] No such file or directory: 'Versions\\b090rereremaze\\Losses\\PolicyLoss__b090rereremaze.csv': PATH -> (Versions\b090rereremaze\Losses)
+ERROR: ValueLoss__b090rereremaze
+  [Errno 2] No such file or directory: 'Versions\\b090rereremaze\\Losses\\ValueLoss__b090rereremaze.csv': PATH -> (Versions\b090rereremaze\Losses)
+ERROR: Beta__b090rereremaze
+  [Errno 2] No such file or directory: 'Versions\\b090rereremaze\\Policy\\Beta__b090rereremaze.csv': PATH -> (Versions\b090rereremaze\Policy)
+ERROR: Epsilon__b090rereremaze
+  [Errno 2] No such file or directory: 'Versions\\b090rereremaze\\Policy\\Epsilon__b090rereremaze.csv': PATH -> (Versions\b090rereremaze\Policy)
+ERROR: LearningRate__b090rereremaze
+  [Errno 2] No such file or directory: 'Versions\\b090rereremaze\\Policy\\LearningRate__b090rereremaze.csv': PATH -> (Versions\b090rereremaze\Policy)
+ERROR: MazeNumber__b090rereremaze
+  [Errno 2] No such file or directory: 'Versions\\b090rereremaze\\Custom\\MazeNumber__b090rereremaze.csv': PATH -> (Versions\b090rereremaze\Custom)
+ERROR: Checkpoints__b090rereremaze
+  [Errno 2] No such file or directory: 'Versions\\b090rereremaze\\Custom\\Checkpoints__b090rereremaze.csv': PATH -> (Versions\b090rereremaze\Custom)

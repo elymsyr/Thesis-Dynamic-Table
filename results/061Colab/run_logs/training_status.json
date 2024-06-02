@@ -1,0 +1,65 @@
+{
+    "AgentBehavior": {
+        "checkpoints": [
+            {
+                "steps": 8499962,
+                "file_path": "results/ColabTest/AgentBehavior/AgentBehavior-8499962.onnx",
+                "reward": 1.1516050669098539,
+                "creation_time": 1710599240.093017,
+                "auxillary_file_paths": [
+                    "results/ColabTest/AgentBehavior/AgentBehavior-8499962.pt"
+                ]
+            },
+            {
+                "steps": 8999995,
+                "file_path": "results/ColabTest/AgentBehavior/AgentBehavior-8999995.onnx",
+                "reward": 1.788083462510258,
+                "creation_time": 1710602388.5102155,
+                "auxillary_file_paths": [
+                    "results/ColabTest/AgentBehavior/AgentBehavior-8999995.pt"
+                ]
+            },
+            {
+                "steps": 9499972,
+                "file_path": "results/ColabTest/AgentBehavior/AgentBehavior-9499972.onnx",
+                "reward": 1.532640830766071,
+                "creation_time": 1710605581.4119308,
+                "auxillary_file_paths": [
+                    "results/ColabTest/AgentBehavior/AgentBehavior-9499972.pt"
+                ]
+            },
+            {
+                "steps": 9999996,
+                "file_path": "results/ColabTest/AgentBehavior/AgentBehavior-9999996.onnx",
+                "reward": 1.660579660694514,
+                "creation_time": 1710608741.8080626,
+                "auxillary_file_paths": [
+                    "results/ColabTest/AgentBehavior/AgentBehavior-9999996.pt"
+                ]
+            },
+            {
+                "steps": 10000060,
+                "file_path": "results/ColabTest/AgentBehavior/AgentBehavior-10000060.onnx",
+                "reward": 1.660579660694514,
+                "creation_time": 1710608741.8798997,
+                "auxillary_file_paths": [
+                    "results/ColabTest/AgentBehavior/AgentBehavior-10000060.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 10000060,
+            "file_path": "results/ColabTest/AgentBehavior.onnx",
+            "reward": 1.660579660694514,
+            "creation_time": 1710608741.8798997,
+            "auxillary_file_paths": [
+                "results/ColabTest/AgentBehavior/AgentBehavior-10000060.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.30.0",
+        "torch_version": "2.2.1+cu118"
+    }
+}

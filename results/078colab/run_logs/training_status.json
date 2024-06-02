@@ -1,0 +1,65 @@
+{
+    "Dynamic Table": {
+        "checkpoints": [
+            {
+                "steps": 6999994,
+                "file_path": "/content/drive/MyDrive/results/078/Dynamic Table/Dynamic Table-6999994.onnx",
+                "reward": 2.76432886876558,
+                "creation_time": 1713147085.2409263,
+                "auxillary_file_paths": [
+                    "/content/drive/MyDrive/results/078/Dynamic Table/Dynamic Table-6999994.pt"
+                ]
+            },
+            {
+                "steps": 7999991,
+                "file_path": "/content/drive/MyDrive/results/078/Dynamic Table/Dynamic Table-7999991.onnx",
+                "reward": 2.512065862374816,
+                "creation_time": 1713153813.0039294,
+                "auxillary_file_paths": [
+                    "/content/drive/MyDrive/results/078/Dynamic Table/Dynamic Table-7999991.pt"
+                ]
+            },
+            {
+                "steps": 8999988,
+                "file_path": "/content/drive/MyDrive/results/078/Dynamic Table/Dynamic Table-8999988.onnx",
+                "reward": 2.4389231021587667,
+                "creation_time": 1713160553.1426795,
+                "auxillary_file_paths": [
+                    "/content/drive/MyDrive/results/078/Dynamic Table/Dynamic Table-8999988.pt"
+                ]
+            },
+            {
+                "steps": 9999968,
+                "file_path": "/content/drive/MyDrive/results/078/Dynamic Table/Dynamic Table-9999968.onnx",
+                "reward": 2.648446877518397,
+                "creation_time": 1713167278.656182,
+                "auxillary_file_paths": [
+                    "/content/drive/MyDrive/results/078/Dynamic Table/Dynamic Table-9999968.pt"
+                ]
+            },
+            {
+                "steps": 10000005,
+                "file_path": "/content/drive/MyDrive/results/078/Dynamic Table/Dynamic Table-10000005.onnx",
+                "reward": 2.650787381653013,
+                "creation_time": 1713167278.8249984,
+                "auxillary_file_paths": [
+                    "/content/drive/MyDrive/results/078/Dynamic Table/Dynamic Table-10000005.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 10000005,
+            "file_path": "/content/drive/MyDrive/results/078/Dynamic Table.onnx",
+            "reward": 2.650787381653013,
+            "creation_time": 1713167278.8249984,
+            "auxillary_file_paths": [
+                "/content/drive/MyDrive/results/078/Dynamic Table/Dynamic Table-10000005.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.0.0",
+        "torch_version": "2.2.1+cu121"
+    }
+}

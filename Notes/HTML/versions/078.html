@@ -1,0 +1,1155 @@
+<html><head>
+    <title>078</title>
+    <link href="..\style.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="top-left">
+      <a onclick="scrollToTop()">Go to Top</a>
+      <a onclick="shrunk()">Shrunk</a>
+      <a onclick="readCurrentHTMLFileAndSave()">Save</a>
+      <a href="../index.html" id="header">Back to Versions</a>
+    </div><br><br><br>
+    <h1>
+      <a class="content-header" onclick="toggleAccordion(this, 1)">078</a>
+    </h1>
+    <div class="accordion-content">
+      <ol>
+        <li>
+          <a href="#notes" id="OLnotes">Notes</a>
+        </li>
+        <li id="OLreward">
+          <a href="#reward">Reward</a>
+        </li>
+        <li id="OLhowworks">
+          <a href="#howworks">How Works</a>
+        </li>
+        <li id="OLgraphs">
+          <a href="#graphs">Graphs</a>
+        </li>
+      </ol>
+    </div>
+    <b class="content-header underline" onclick="toggleAccordion(this, 2)">
+      <h2>
+        <a id="notes">Notes</a>
+      </h2>
+    </b>
+    <div class="accordion-content active" id="textnotes">
+      <textarea cols="50" id="textAreaNotes" placeholder="Type or insert text here..." rows="5" style="height: 40px; width: 177px;"></textarea>
+      <button onclick="createParagraph('textnotes', 'textAreaNotes')">Insert Text</button>
+    <div><p>30x30 Table<br>63 Observations<br>44 Actions<br>Max Step 500<br><br>Reward Function: ((directionPoint*speed*speed)-heighpoint)/closeness reduced to a number in range of -0.1 and 0.1<br><br>        if (!onTarget){<br>            directionPoint = Vector3.Dot(productRigidbody.velocity.normalized, (target.transform.localPosition - product.transform.localPosition).normalized);<br>            float closeness = targetCloseness();<br>            heighpoint = Math.Abs(product.transform.localPosition.y - 6.1f);<br>            if(heighpoint&lt;0.1f){heighpoint=0.1f;}<br>            float speed = productRigidbody.velocity.magnitude;<br>            if(directionPoint&lt;0.4 &amp;&amp; directionPoint&gt;0 &amp;&amp; !table.gMaze){directionPoint*=-1;}<br>            // else if (table.gMaze &amp;&amp; directionPoint &gt; -difficulty &amp;&amp; directionPoint &lt; 0){directionPoint*=-difficulty-directionPoint;}<br>            if(speed &lt; 0.1f){speed = 0.1f;}<br>            if(closeness&lt;1){closeness = 1f;}<br>            closeness = shrunk(closeness, min:1, max:40, newMin:1, newMax:10);<br>            float reward = ((directionPoint*speed*speed)-heighpoint)/closeness;<br>            AddReward(shrunk(reward, reward_state:true));<br>        }<br><br>direction point : A score given to movement direction of the product. Increased if the movement direction is to target.<br>heighpoint : Location y of the product<br>targetCloseness : Distance between product and target<br><br><br>Observation Space:<br><br>- Y positions of moving pieces<br>- Locations of the product and the target and the distance between them<br>- Speed of the product<br>- 10 Ray Perception Sensor Outputs<br>- Difficulty value</p><button class="deleteButton">Delete</button></div><div><p>078n3 version has not difficulty in the observation space</p><button class="deleteButton">Delete</button></div></div>
+    <b>
+      <h2 id="reward">
+        <a class="content-header" onclick="toggleAccordion(this, 3)">Principle &amp; Reward</a>
+      </h2>
+    </b>
+    <div class="accordion-content" id="textreward">
+      <textarea cols="50" id="textAreaReward" placeholder="Type or insert text here..." rows="5"></textarea>
+      <button onclick="createParagraph('textreward', 'textAreaReward')">Insert Text</button>
+    </div>
+    <b>
+      <h2 id="howworks">
+        <a class="content-header" onclick="toggleAccordion(this, 4)">How Works</a>
+      </h2>
+    </b>
+    <div class="accordion-content">
+      <div>
+        <ul>
+          <li style="display:flex;justify-content: flex-start;">
+            <a href="..\..\Versions\078\Files\Scripts\configuration.yaml" target="_blank">configuration.yaml</a>
+            <p class="underline" onclick="toggleAccordion(this, 5)" style="margin:0px 10px;color:#919191;">show code</p>
+          </li>
+          <textarea class="accordion-content" cols="120" readonly="readonly" rows="20">default_settings: null
+behaviors:
+  Dynamic Table:
+    trainer_type: ppo
+    hyperparameters:
+      batch_size: 1024
+      buffer_size: 10240
+      learning_rate: 0.0006
+      beta: 0.005
+      epsilon: 0.25
+      lambd: 0.95
+      num_epoch: 3
+      shared_critic: false
+      learning_rate_schedule: linear
+      beta_schedule: linear
+      epsilon_schedule: linear
+    network_settings:
+      normalize: false
+      hidden_units: 64
+      num_layers: 3
+      vis_encode_type: simple
+      memory: null
+      goal_conditioning_type: hyper
+      deterministic: false
+    reward_signals:
+      extrinsic:
+        gamma: 0.99
+        strength: 1.0
+        network_settings:
+          normalize: false
+          hidden_units: 64
+          num_layers: 3
+          vis_encode_type: simple
+          memory: null
+          goal_conditioning_type: hyper
+          deterministic: false
+    init_path: null
+    keep_checkpoints: 5
+    checkpoint_interval: 1000000
+    max_steps: 10000000
+    time_horizon: 64
+    summary_freq: 10000
+    threaded: false
+    self_play: null
+    behavioral_cloning: null
+env_settings:
+  env_path: Builds\b078
+  env_args: null
+  base_port: 5004
+  num_envs: 5
+  num_areas: 1
+  seed: -1
+  max_lifetime_restarts: 10
+  restarts_rate_limit_n: 1
+  restarts_rate_limit_period_s: 60
+engine_settings:
+  width: 84
+  height: 84
+  quality_level: 5
+  time_scale: 20.0
+  target_frame_rate: -1
+  capture_frame_rate: 60
+  no_graphics: true
+environment_parameters: null
+checkpoint_settings:
+  run_id: b078pc
+  initialize_from: null
+  load_model: false
+  resume: false
+  force: false
+  train_model: false
+  inference: false
+  results_dir: results
+torch_settings:
+  device: cuda
+debug: false
+</textarea>
+          <li style="display:flex;justify-content: flex-start;">
+            <a href="..\..\Versions\078\Files\Scripts\CreateBoard.cs" target="_blank">CreateBoard.cs</a>
+            <p class="underline" onclick="toggleAccordion(this, 6)" style="margin:0px 10px;color:#919191;">show code</p>
+          </li>
+          <textarea class="accordion-content" cols="120" readonly="readonly" rows="20">using System.Collections.Generic;
+using UnityEngine;
+
+public class CreateBoard078 : MonoBehaviour
+{
+    [Header("Table Settings")]
+    [SerializeField] private bool Maze = false;
+    public bool gMaze =&gt; Maze;
+    [SerializeField] [Range(1,1000)]private float freq = 100;
+    public float gfreq =&gt; freq;    
+    [SerializeField] [Range(15,50)] public int rows = 30;
+    [SerializeField] [Range(15,50)] public int columns = 30;
+    [SerializeField] [Range(0.01f,0.4f)] private float difficulty = 0.03f;
+    [Header("Target Settings")]
+    public bool TargetRun = false;
+    public bool RandomTargetSpeed = true;
+    [SerializeField] [Range(2f,6f)] public float TargetMoveSpeed = 4f;
+    private float gap = 0.2f;
+    [Header("Prefabs &amp; Others")]
+    public Material boxMaterial;
+    public Material coverMaterial;
+    public Material wallMaterial;
+    public Material mazeMaterial;
+    private GameObject pieces;
+    private GameObject cover;
+    private Transform[,] boxesArray;
+    private float[] wallBorders;
+    public float[] getBorders =&gt; wallBorders;
+    public Transform[,] getPieces =&gt; boxesArray;
+    [SerializeField] private GameObject productPrefab;
+    private GameObject product;
+    public GameObject getProduct =&gt; product;
+    [SerializeField] private GameObject targetPrefab;
+    private GameObject target;
+    public GameObject getTarget =&gt; target;
+    private float scale = 4f;
+    public GameObject[] getWalls =&gt; wallsArray;
+
+    public float productScale =&gt; scale;
+    public GameObject[] wallsArray; 
+    public List&lt;GameObject&gt; maze;
+    private int wallDistCheck = 0;
+    public float getD =&gt; difficulty;
+    private int wallNumber = 0;
+    public int getWallNumber =&gt; wallNumber;
+    private float startDistance = 0;
+    public float getSDistance =&gt; startDistance;
+
+    public float GetWallDist(GameObject ball){
+        GameObject[] walls = GameObject.FindGameObjectsWithTag("Wall");
+        if (walls.Length == 0)
+        {
+            Debug.LogWarning("No walls found.");
+        }
+        float closestDistance = Mathf.Infinity;
+
+        foreach (GameObject wall in walls)
+        {
+            float distance = Vector3.Distance(ball.transform.position, wall.transform.position);
+            if (distance &lt; closestDistance)
+            {
+                closestDistance = distance;
+            }
+        }
+        return closestDistance;
+    }    
+
+    public void CreateEnv(float difficulty){
+        Vector3 boardSize = CreateBoxes();
+        CreateWalls(boardSize);
+        LoadPrefabs();
+        CreateMaze();
+        ObjectPos(difficulty);
+    }
+    
+    public Vector3 CreateBoxes()
+    {
+        pieces = new GameObject("Pieces");
+        pieces.transform.parent = transform;    
+
+        Vector3 boxSize = new Vector3(1, 6, 1);
+        float totalWidth = rows * (boxSize.x + gap);
+        float totalHeight = columns * (boxSize.z + gap);
+
+        Vector3 startPos = transform.position - new Vector3(totalWidth / 2f, 0f, totalHeight / 2f);
+        Vector3 boardSize = new Vector3(totalWidth, boxSize.y, totalHeight);
+
+        boxesArray = new Transform[rows, columns];
+
+        for (int x = 0; x &lt; rows; x++)
+        {
+            for (int z = 0; z &lt; columns; z++)
+            {
+                Vector3 position = startPos + new Vector3(x * (boxSize.x + gap), 0f, z * (boxSize.z + gap));
+                GameObject box = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                box.name = "Box";
+                box.transform.position = position;
+                box.transform.localScale = boxSize;
+                box.transform.parent = pieces.transform;
+
+                if (boxMaterial != null)
+                {
+                    Renderer renderer = box.GetComponent&lt;Renderer&gt;();
+                    if (renderer != null)
+                    {
+                        renderer.material = boxMaterial;
+                    }
+                }
+
+                boxesArray[x, z] = box.transform;
+            }
+        }
+
+        Vector3 coverSize = new Vector3(totalWidth+1f, 4, totalHeight+1f);
+        cover = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        cover.name = "Board";
+        cover.transform.parent = transform;
+        cover.transform.position = startPos + new Vector3(totalWidth / 2f, -0.3f, totalHeight / 2f);
+        cover.transform.localScale = coverSize;
+        Vector3 boardPosition = cover.transform.localPosition;
+        boardPosition.x -= gap*3;
+        boardPosition.z -= gap*3;
+        cover.transform.localPosition = boardPosition;
+
+        if (coverMaterial != null)
+        {
+            Renderer coverRenderer = cover.GetComponent&lt;Renderer&gt;();
+            if (coverRenderer != null)
+            {
+                coverRenderer.material = coverMaterial;
+            }
+        }
+
+        return boardSize;
+    }
+
+    public void CreateWalls(Vector3 boardSize)
+    {
+        wallsArray = new GameObject[4];
+        wallBorders = new float[4];
+        float wallThickness = 0.2f;
+        float wallHeight = 15f;
+
+        Vector3[] wallPositions = {
+            new Vector3(boardSize.x / 2f, wallHeight / 2f, 0f),
+            new Vector3(-boardSize.x / 2f, wallHeight / 2f, 0f),
+            new Vector3(0f, wallHeight / 2f, boardSize.z / 2f),
+            new Vector3(0f, wallHeight / 2f, -boardSize.z / 2f)
+        };
+
+        Quaternion[] wallRotations = {
+            Quaternion.Euler(0f, 0f, 0f),
+            Quaternion.Euler(0f, 0f, 0f),
+            Quaternion.Euler(0f, 90f, 0f),
+            Quaternion.Euler(0f, 90f, 0f)
+        };
+
+        int LayerIgnoreRaycast = LayerMask.NameToLayer("Walls");
+
+        for (int i = 0; i &lt; wallPositions.Length; i++)
+        {
+            Vector3 position = wallPositions[i];
+            Quaternion rotation = wallRotations[i];
+
+            GameObject wall = GameObject.CreatePrimitive(PrimitiveType.Cube);
+            wall.layer = LayerIgnoreRaycast;
+            wall.tag = "Wall";
+            wall.transform.parent = transform;
+            Collider wallCollider = wall.GetComponent&lt;BoxCollider&gt;();
+            wallCollider.isTrigger = true;
+            wall.transform.localPosition = position;
+            wall.transform.localScale = new Vector3(wallThickness, wallHeight, boardSize.z+2.5f);
+            wall.transform.rotation = rotation;
+            wall.name = "Wall"+(i+1);
+            Vector3 wallPosition = wall.transform.localPosition;
+            if(i==0){
+                wallPosition.x += 1f;
+                wallPosition.z -= 0.5f;
+            }
+            else if(i==1){
+                wallPosition.x -= 2f;
+                wallPosition.z -= 0.5f;
+            }
+            else if(i==2){
+                wallPosition.z += 1f;
+                wallPosition.x -= 0.5f;
+                
+            }
+            else{
+                wallPosition.z -= 2f;
+                wallPosition.x -= 0.5f;
+            }
+            wall.transform.localPosition = wallPosition;
+            if (i &gt; 1){wallBorders[i] = wall.transform.localPosition.z;}
+            else{wallBorders[i] = wall.transform.localPosition.x;}
+            if (wallMaterial != null)
+            {
+                Renderer renderer = wall.GetComponent&lt;Renderer&gt;();
+                if (renderer != null)
+                {
+                    renderer.material = wallMaterial;
+                }
+            }
+            wallsArray[i] = wall;
+        }
+    }
+
+    public void LoadPrefabs(){
+        product = Instantiate(productPrefab);
+        product.transform.parent = transform;
+        product.name = "Product";
+        product.transform.localRotation = Quaternion.identity;
+
+        target = Instantiate(targetPrefab);
+        target.transform.parent = transform;
+        target.SendMessage("AwakeMe");     
+        target.name = "Target";
+        target.transform.localRotation = Quaternion.identity;
+    }
+
+    public float ObjectPos(float diff){
+        Vector3 target_start = randomPos();
+        Vector3 product_start = randomPos();      
+        bool positining = true;
+        wallDistCheck = 0;
+        int positiningCount = 0;
+        int mazePositiningCount = 0;
+        
+        while(positining){
+            do {
+                if (wallDistCheck &gt; 10){
+                    wallDistCheck = 0;
+                    if (diff &gt; 0.4f){diff-=0.1f;}
+                    else{diff -= 0.01f;}
+                    if(diff &lt; 0.03f){diff = 0.03f;}
+                    SetMaze(diff);
+                }
+                target_start = randomPos();
+                product_start = randomPos();
+                target.transform.localPosition = target_start;
+                product.transform.localPosition = product_start;
+                wallDistCheck++;
+                mazePositiningCount++;
+                if(mazePositiningCount &gt; 100){
+                    ResetWalls();
+                    target_start = randomPos();
+                    product_start = randomPos();
+                    target.transform.localPosition = target_start;
+                    product.transform.localPosition = product_start;
+                    break;                    
+                }
+            } while (GetWallDist(target) &lt; 2f || GetWallDist(product) &lt; 2.6f);
+
+            if(Vector3.Distance(target_start, product_start) &gt; 8f){
+                positining = false;
+            }
+
+            if(positiningCount &gt; 10){
+                ResetWalls();
+                target.transform.localPosition = randomPos();
+                product.transform.localPosition = randomPos();
+                break;
+            }
+            positiningCount++;
+        }
+
+        startDistance = Vector3.Distance(target_start, product_start);
+        productCollision078 productClass = product.GetComponent&lt;productCollision078&gt;();
+        productClass.InitializeProduct(target,gameObject);
+        target.SendMessage("GetBorders");
+        return diff;
+    }
+
+    private Vector3 randomPos(){
+        return new Vector3(Random.Range(wallBorders[0]-(scale/2)-2.1f, wallBorders[1]+(scale/2)+2.1f), Random.Range(6f,7f), Random.Range(wallBorders[2]-(scale/2)-2.1f, wallBorders[3]+(scale/2)+2.1f));
+    }    
+
+    public void ClearEnvironment()
+    {
+        foreach (Transform child in boxesArray)
+        {
+            Destroy(child.gameObject);
+        }
+        foreach (GameObject child in wallsArray)
+        {
+            Destroy(child.gameObject);
+        }
+        Destroy(pieces.gameObject);
+        Destroy(cover.gameObject);
+        wallsArray = null;
+        wallBorders = null;
+        boxesArray = null;
+        pieces = null;
+        cover = null;
+    }
+
+    public void CreateMaze()
+    {
+        int wallNumberStart = 0;
+        wallNumber = 0;
+        int LayerIgnoreRaycast = LayerMask.NameToLayer("Walls");
+        for (float x = wallBorders[1]-0.1f; x &lt;= wallBorders[0]+0.1f; x += 10f)
+        {
+            for (float z = wallBorders[3]-0.1f; z &lt;= wallBorders[2]+0.1f; z += 10f)
+            {
+                wallNumberStart++;
+            }
+        }
+        maze = new List&lt;GameObject&gt;(wallNumberStart);
+        for (float x = wallBorders[1]-0.1f; x &lt;= wallBorders[0]+0.1f; x += 10f)
+        {
+            for (float z = wallBorders[3]-0.1f; z &lt;= wallBorders[2]+0.1f; z += 10f)
+            {
+                GameObject wall = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                wall.layer = LayerIgnoreRaycast;
+                wall.tag = "Wall";
+                wall.transform.parent = transform;
+                wall.transform.localPosition = new Vector3(0, -11f, 0);
+                wall.transform.localScale = new Vector3(0.2f,15f,5f);
+                BoxCollider collider = wall.GetComponent&lt;BoxCollider&gt;();
+                collider.isTrigger = true;
+                if (mazeMaterial != null)
+                {
+                    Renderer renderer = wall.GetComponent&lt;Renderer&gt;();
+                    if (renderer != null)
+                    {
+                        renderer.material = mazeMaterial;
+                    }
+                }
+                maze.Add(wall);
+            }
+        }
+    }
+
+    public void ResetWalls(){
+        wallNumber = 0;
+        foreach(GameObject wall in maze)
+        {
+            wall.transform.localPosition = new Vector3(0f, -11f, 0f);
+        }        
+    }
+
+    public void SetMaze(float diff){
+        ResetWalls();
+        wallNumber = 0;
+        int wall_index = -1;
+        for (float x = wallBorders[1]-0.1f; x &lt; wallBorders[0]+0.1f; x += 10f)
+        {
+            for (float z = wallBorders[3]-0.1f; z &lt; wallBorders[2]+0.1f; z += 10f)
+            {
+                if (Random.Range(0f, 1f) &lt; diff)
+                {
+                    if(wall_index++ &lt; maze.Count &amp;&amp; maze[wall_index] != null){
+                        wallNumber++;
+                        maze[wall_index].transform.localRotation = Quaternion.Euler(0f,Random.Range(0f, 360f),0f);
+                        maze[wall_index].transform.localPosition = new Vector3(x+1f, 8f, z+1f);
+                    }
+                }
+            }
+        } 
+    }
+}
+</textarea>
+          <li style="display:flex;justify-content: flex-start;">
+            <a href="..\..\Versions\078\Files\Scripts\dynamicTable.cs" target="_blank">dynamicTable.cs</a>
+            <p class="underline" onclick="toggleAccordion(this, 7)" style="margin:0px 10px;color:#919191;">show code</p>
+          </li>
+          <textarea class="accordion-content" cols="120" readonly="readonly" rows="20">using UnityEngine;
+using Unity.MLAgents.Actuators;
+using Unity.MLAgents;
+using TMPro;
+using Unity.MLAgents.Sensors;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using Unity.MLAgents.Policies;
+using Unity.Barracuda;
+using System.Net;
+using Unity.VisualScripting;
+
+public class dynamicTable078 : Agent
+{
+    private int state = 0;
+    [SerializeField] private bool showUI = false;
+    [SerializeField] private GameObject text;
+    private TextMeshPro ui;
+    private float directionPoint = 0;
+    private int win = 0;
+    private CreateBoard078 table;
+    private int rows;
+    private int columns;
+    public Transform[,] boxesArray;
+    public Vector3[,] boxesLoc;
+    private GameObject product;
+    private GameObject target;
+    private int size = 8;
+    [Range(0f,15f)] public float MoveSpeed = 10f;
+    private Transform[] activeArray;
+    private Rigidbody productRigidbody;
+    private List&lt;Tuple&lt;int, int&gt;&gt; specifiedPoints;
+    private bool onTarget = false;
+    private productCollision078 productClass;
+    private List&lt;float&gt; observation;
+    private RayPerceptionOutput.RayOutput[] rayOutputs;
+    private RayPerceptionSensorComponent3D rayPerceptionSensor;
+    private StatsRecorder recorder; 
+    private float difficulty;
+    private float multiplier = 0.0001f;
+    private int lastStep = 0;
+    private int trigger = 0;
+    private float freq = 0;
+    private int lose_streak = 0;
+
+    void Awake()
+    {
+        recorder = Academy.Instance.StatsRecorder;
+        observation = new List&lt;float&gt;(10);
+        if (MaxStep&lt;1){
+            MaxStep = 600;
+        }
+        if (size == 7){ // 45 Observation 37 Actions
+            specifiedPoints = new List&lt;Tuple&lt;int, int&gt;&gt;(){new Tuple&lt;int, int&gt;(0, 0),new Tuple&lt;int, int&gt;(0, 1),new Tuple&lt;int, int&gt;(1, 0),new Tuple&lt;int, int&gt;(0, 5),new Tuple&lt;int, int&gt;(0, 6),new Tuple&lt;int, int&gt;(1, 6),new Tuple&lt;int, int&gt;(5, 0),new Tuple&lt;int, int&gt;(6, 0),new Tuple&lt;int, int&gt;(6, 1),new Tuple&lt;int, int&gt;(6, 5),new Tuple&lt;int, int&gt;(6, 6),new Tuple&lt;int, int&gt;(5, 6)};
+        }
+        else{ // 52 Observation 55 Actions
+            specifiedPoints = new List&lt;Tuple&lt;int, int&gt;&gt;(){new Tuple&lt;int, int&gt;(0, 0),new Tuple&lt;int, int&gt;(0, 1),new Tuple&lt;int, int&gt;(1, 0),new Tuple&lt;int, int&gt;(2, 0),new Tuple&lt;int, int&gt;(0, 2),new Tuple&lt;int, int&gt;(0, 5),new Tuple&lt;int, int&gt;(0, 6),new Tuple&lt;int, int&gt;(0, 7),new Tuple&lt;int, int&gt;(1, 7),new Tuple&lt;int, int&gt;(2, 7),new Tuple&lt;int, int&gt;(5, 0),new Tuple&lt;int, int&gt;(6, 0),new Tuple&lt;int, int&gt;(7, 0),new Tuple&lt;int, int&gt;(7, 1),new Tuple&lt;int, int&gt;(7, 2),new Tuple&lt;int, int&gt;(7, 5),new Tuple&lt;int, int&gt;(7, 6),new Tuple&lt;int, int&gt;(7, 7),new Tuple&lt;int, int&gt;(6, 7),new Tuple&lt;int, int&gt;(5, 7),};
+        }
+
+        if (text != null)
+        {
+            ui = text.GetComponent&lt;TextMeshPro&gt;();
+        }        
+        table = transform.GetComponent&lt;CreateBoard078&gt;();
+        difficulty = table.getD;
+        freq = table.gfreq;
+        rows = table.rows;
+        columns = table.columns;
+        foreach (Transform child in table.transform)
+        {
+            Destroy(child.gameObject);
+        }
+        table.CreateEnv(difficulty);
+        product = table.getProduct;
+        Transform ray = product.transform.GetChild(0);
+        rayPerceptionSensor = ray.GetComponent&lt;RayPerceptionSensorComponent3D&gt;();
+        target = table.getTarget;
+
+
+        if (product == null){Debug.Log("Product NULL");}
+        if (target == null){Debug.Log("Target NULL");}
+        productRigidbody = product.GetComponent&lt;Rigidbody&gt;();
+        boxesArray = table.getPieces;
+        rows = table.rows;
+        columns = table.columns;
+        productClass = product.GetComponent&lt;productCollision078&gt;();
+        productClass.InitializeProduct(target,gameObject);
+        boxesLoc = new Vector3[rows,columns];     
+        for(int i=0; i&lt;rows;i++){
+            for(int j=0;j&lt;columns;j++){
+                boxesLoc[i,j]=boxesArray[i,j].transform.localPosition;
+            }
+        }
+    }
+
+    public override void OnActionReceived(ActionBuffers actions)
+    {
+        if(table.gMaze){AddReward(-0.0001f);}
+        int index = 0;
+        int movingPartsIndex = 0;
+        onTarget = productClass.triggered;
+        GetActiveArray();
+
+        foreach (Transform child in boxesArray)
+        {
+            if (child != null)
+            {
+                if (Array.IndexOf(activeArray, child) != -1){
+                    float newYPosition = child.localPosition.y + actions.ContinuousActions[movingPartsIndex] * MoveSpeed * Time.deltaTime;
+                    newYPosition = Mathf.Clamp(newYPosition, 0f, 4.7f);
+                    child.localPosition = new Vector3(child.localPosition.x, newYPosition, child.localPosition.z);
+                    movingPartsIndex++;
+                }
+                else
+                {
+                    int i = index / rows;
+                    int j = index % columns;
+                    child.transform.localPosition = boxesLoc[i, j];
+                }
+                index++;
+            }
+            else{
+                Debug.Log("Null child founded!");
+            }
+        }
+        if (!onTarget){
+            directionPoint = Vector3.Dot(productRigidbody.velocity.normalized, (target.transform.localPosition - product.transform.localPosition).normalized);
+            float closeness = targetCloseness();
+            float heighpoint = product.transform.localPosition.y - 3f;
+            float speed = productRigidbody.velocity.magnitude;
+            if(directionPoint&lt;difficulty+0.1f &amp;&amp; directionPoint&gt;0 &amp;&amp; !table.gMaze){directionPoint*=-1;}
+            else if (table.gMaze &amp;&amp; directionPoint &gt; -difficulty &amp;&amp; directionPoint &lt; 0){directionPoint*=-difficulty-directionPoint;}
+            if(speed &lt; 0.1f){speed = 0.1f;}
+            if(closeness&lt;1){closeness = 1f;}
+            closeness = shrunk(closeness, min:1, max:40, newMin:1, newMax:10);
+            float reward = (directionPoint*speed*speed)/closeness;
+            AddReward(shrunk(reward, reward_state:true));
+        }
+        if (showUI)
+        {
+            updateUI();
+        }
+        lastStep = StepCount;
+    }
+
+    private float shrunk(float reward, float min = -100 , float max = 100, float newMin = -0.1f, float newMax = 0.1f, bool reward_state = false){
+        if(reward_state==true){
+            if(reward&gt;0){newMin=0; min = 0;}
+            if(reward&lt;0){newMax=0; max = 0;}
+        }
+        return newMin + ((newMax-newMin)*(reward-min)/(max-min));
+    }
+
+    public override void OnEpisodeBegin()
+    {
+        MaxStep = (int)(400f+freq);
+        if (freq &gt; 500){
+            freq = 100;
+        }
+        else if(freq &lt; 10){
+            freq = 10;
+        }
+        if(difficulty &gt; 0.6f){
+            difficulty = 0.6f;
+        }
+        else if(difficulty &lt; 0.01f){
+            difficulty = 0.01f;
+        }
+        recorder.Add("Custom/Completed Episodes",CompletedEpisodes,StatAggregationMethod.Average);
+        recorder.Add("Custom/Avg Step",lastStep,StatAggregationMethod.Average);
+        recorder.Add("Custom/Win",state,StatAggregationMethod.Average);
+        recorder.Add("Custom/Freq",freq,StatAggregationMethod.Average);
+        recorder.Add("Custom/Wall Difficulty",difficulty,StatAggregationMethod.Average);
+        recorder.Add("Custom/Avg Wall Number",table.getWallNumber,StatAggregationMethod.Average);
+        recorder.Add("Custom/Wall Crash",trigger,StatAggregationMethod.Average);
+        if(CompletedEpisodes%((int)freq) == 0 &amp;&amp; table.gMaze){
+            table.SetMaze(difficulty);
+        }
+        difficulty = table.ObjectPos(difficulty);
+        product.transform.localRotation = Quaternion.Euler(0f, 0f, 0f);
+        productRigidbody.velocity = Vector3.zero;
+        activeArray = new Transform[size*size-specifiedPoints.Count];
+        GetActiveArray();
+    }
+    
+    public void triggerReset(){
+        state -= 1;
+        difficulty = (float)Math.Pow(difficulty,multiplier) * difficulty * 0.9f;
+        freq += 0.5f;
+        trigger++;
+        lose_streak++;
+        if (lose_streak&gt;freq*0.8f){
+            if(table.gMaze){
+                table.SetMaze(difficulty-0.01f);
+            }
+            difficulty = table.ObjectPos(difficulty);
+            lose_streak = 0;
+        }
+        if(difficulty&gt;0.5f){difficulty-=0.1f;}
+        AddReward(-2f);
+        EndEpisode();
+    }
+    
+    public void winReset(){
+        win++;
+        freq -= freq*0.2f;
+        state += 1;
+        difficulty = (float)((float)Math.Pow(difficulty/multiplier,multiplier) * difficulty * 1.03);
+        AddReward(2f);
+        EndEpisode();
+    }
+
+    public override void CollectObservations(VectorSensor sensor)
+    {
+        foreach (Transform child in activeArray)
+        {
+            if (child != null)
+            {
+                sensor.AddObservation(child.localPosition.y);
+            }
+            else
+            {
+                sensor.AddObservation(0);
+            }
+        }
+        sensor.AddObservation(product.transform.localPosition);
+        sensor.AddObservation(target.transform.localPosition);
+        sensor.AddObservation(targetCloseness());
+        sensor.AddObservation(productRigidbody.velocity.magnitude);
+        sensor.AddObservation(difficulty);
+        RayCollect();
+        sensor.AddObservation(observation);
+    }
+
+    private void RayCollect(){
+        if (observation != null){
+            observation.Clear();
+        }
+        rayOutputs = RayPerceptionSensor.Perceive(rayPerceptionSensor.GetRayPerceptionInput()).RayOutputs;
+        for (int i = 0; i &lt; rayOutputs.Length-1; i++)
+        {
+            var rayDirection = rayOutputs[i].EndPositionWorld - rayOutputs[i].StartPositionWorld;
+            float rayHitDistance = rayOutputs[i].HitFraction * rayDirection.magnitude;
+            observation.Add(rayHitDistance);
+        }
+    }
+
+    private void updateUI()
+    {
+        ui.text = "Product States\nFrequency: "+freq+" ("+(int)freq+") "+"\nDifficulty: "+difficulty+"\nBoard Size: "+rows+"x"+columns+"\nDirection: "+directionPoint+"\nSpeed: "+productRigidbody.velocity.magnitude+"\nPosition: "+product.transform.localPosition+"\nDistance to Target: "+targetCloseness()+"\nReward: "+GetCumulativeReward()+"\nAction Count: "+StepCount+"\nGame Count: "+CompletedEpisodes+"\nWin Count: "+win+"\nActive Parts Map: \n"+ActiveMap();
+    }
+    private string ActiveMap(){
+        string arrayString = "";
+        int index = 0;
+        int[] alpha = new int[specifiedPoints.Count];
+        for(int i=0;i&lt;specifiedPoints.Count;i++){
+            alpha[i] = specifiedPoints[i].Item1*size+specifiedPoints[i].Item2;
+        }
+        for (int i = 0; i &lt; size*size; i++)
+        {
+            if (alpha.Contains(i)){arrayString += " _ ";}
+            else{
+                if (activeArray[index] != null){arrayString += (int)activeArray[index].transform.localPosition.y+" ";}
+                else{arrayString += "X ";}
+                index++;
+            }
+            if ((i+1)%size == 0){arrayString += "\n";}
+        }
+        return arrayString;       
+    }
+
+    private void GetActiveArray()
+    {
+        int[] centerPoint = FindClosestTransform();
+        bool isInList;
+        int startX = centerPoint[0] - size / 2;
+        int startY = centerPoint[1] - size / 2;
+        int index = 0;
+        for (int i = 0; i &lt; size; i++)
+        {
+            for (int j = 0; j &lt; size; j++)
+            {
+                isInList = specifiedPoints.Any(tuple =&gt; tuple.Item1 == (i,j).Item1 &amp;&amp; tuple.Item2 == (i,j).Item2);
+                if (!isInList){
+                    if(IsIndexValid(startX + i, startY + j) &amp;&amp; boxesArray[startX + i, startY + j] != null){
+                        activeArray[index] = boxesArray[startX + i, startY + j];
+                    }
+                    else{
+                        activeArray[index] = null;
+                    }                    
+                index++;
+                }
+            }
+        }
+    }
+    
+    private bool IsIndexValid(int rowIndex, int colIndex)
+    {
+        return rowIndex &gt;= 0 &amp;&amp; rowIndex &lt; rows &amp;&amp; colIndex &gt;= 0 &amp;&amp; colIndex &lt; columns;
+    }    
+    
+    private int[] FindClosestTransform()
+    {
+        int[] closestPosition = new int[2];
+        float closestDistance = Mathf.Infinity;
+
+        for (int i = 0; i &lt; rows; i++)
+        {
+            for (int j = 0; j &lt; columns; j++)
+            {
+                Transform transform = boxesArray[i, j];
+                if (transform != null)
+                {
+                    float distance = GetDistanceToChild(transform);
+                    if (distance &lt; closestDistance)
+                    {
+                        closestDistance = distance;
+                        closestPosition[0] = i;
+                        closestPosition[1] = j;
+                    }
+                }
+            }
+        }
+
+        return closestPosition;
+    }
+    
+    private float targetCloseness()
+    {
+        return Vector3.Distance(product.transform.localPosition, target.transform.localPosition);
+    }
+    
+    private float GetDistanceToChild(Transform child)
+    {
+        float distance = Vector3.Distance(gameObject.transform.InverseTransformPoint(new Vector3(child.position.x, 0f, child.position.z)), gameObject.transform.InverseTransformPoint(new Vector3(product.transform.position.x, 0f, product.transform.position.z)));
+        return distance;
+    }
+
+    public override void Heuristic(in ActionBuffers actionsOut)
+    {
+        ActionSegment&lt;float&gt; continuousActions = actionsOut.ContinuousActions;
+        for (int i = 0; i &lt; size*size-specifiedPoints.Count; i++)
+        {
+            continuousActions[i] = UnityEngine.Random.Range(-1f, 1f);
+        }       
+    }
+}</textarea>
+          <li style="display:flex;justify-content: flex-start;">
+            <a href="..\..\Versions\078\Files\Scripts\productCollision.cs" target="_blank">productCollision.cs</a>
+            <p class="underline" onclick="toggleAccordion(this, 8)" style="margin:0px 10px;color:#919191;">show code</p>
+          </li>
+          <textarea class="accordion-content" cols="120" readonly="readonly" rows="20">using UnityEngine;
+
+public class productCollision078 : MonoBehaviour
+{
+    private GameObject target;
+    private GameObject receiverObject;
+    public bool triggered = false;
+
+    public void InitializeProduct(GameObject setTarget, GameObject receiver){
+        target = setTarget;
+        receiverObject = receiver;
+    } 
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject == target)
+        {
+            receiverObject.SendMessage("winReset");
+            triggered = true;
+        }
+        if (other.gameObject.CompareTag("Wall"))
+        {
+            receiverObject.SendMessage("triggerReset");
+        }
+    }
+
+    private void OnTriggerExit(Collider other){
+        if(other.gameObject == target){
+            triggered = false;
+        }
+    }    
+}
+</textarea>
+          <li style="display:flex;justify-content: flex-start;">
+            <a href="..\..\Versions\078\Files\Scripts\rayRotation.cs" target="_blank">rayRotation.cs</a>
+            <p class="underline" onclick="toggleAccordion(this, 9)" style="margin:0px 10px;color:#919191;">show code</p>
+          </li>
+          <textarea class="accordion-content" cols="120" readonly="readonly" rows="20">using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using Unity.MLAgents.Sensors;
+using UnityEngine;
+
+public class rayRotation078 : MonoBehaviour
+{
+
+    private Quaternion _initialRotation = Quaternion.Euler(0f,0f,0f);
+
+    
+    private void Update(){
+        transform.rotation = _initialRotation;
+    }
+
+}
+</textarea>
+          <li style="display:flex;justify-content: flex-start;">
+            <a href="..\..\Versions\078\Files\Scripts\TargetMovement.cs" target="_blank">TargetMovement.cs</a>
+            <p class="underline" onclick="toggleAccordion(this, 10)" style="margin:0px 10px;color:#919191;">show code</p>
+          </li>
+          <textarea class="accordion-content" cols="120" readonly="readonly" rows="20">using UnityEngine;
+public class TargetMovement078 : MonoBehaviour
+{
+    private bool isMovementOn = false;
+    private CreateBoard078 table;
+    private float[] wallBorders;
+    private float X = 1;
+    private float Z = 1;
+    private GameObject product;
+    private bool startrun = false;
+    private float distance = 0;
+    private bool run;
+
+    private void AwakeMe(){
+        table = transform.parent.GetComponent&lt;CreateBoard078&gt;();
+        product = table.getProduct;
+    }
+
+    void Update()
+    {
+        if (isMovementOn &amp;&amp; startrun)
+        {
+            distance = Vector3.Distance(product.transform.localPosition, transform.localPosition);
+            if (Input.anyKey)
+            {
+                float horizontalInput = Input.GetAxis("Horizontal");
+                float verticalInput = Input.GetAxis("Vertical");
+                float newXPosition = transform.localPosition.x + horizontalInput * table.TargetMoveSpeed * Time.deltaTime;
+                newXPosition = Mathf.Clamp(newXPosition, wallBorders[1], wallBorders[0]);                
+                float newZPosition = transform.localPosition.z + verticalInput * table.TargetMoveSpeed * Time.deltaTime;
+                newZPosition = Mathf.Clamp(newZPosition, wallBorders[3], wallBorders[2]);
+                transform.localPosition = new Vector3(newXPosition, transform.localPosition.y, newZPosition);
+            }
+            else
+            {
+                run = true;
+                int border = Random.Range(4,15);
+                if(border==14){border=9;}
+                else if (border&gt;11){border-=5;}
+                else if(border&gt;9){border-=4;}
+                float horizontalInput = Random.Range(0f, 2f);
+                float verticalInput = Random.Range(0f, 2f);
+                float newXPosition = transform.localPosition.x + horizontalInput * table.TargetMoveSpeed * Time.deltaTime * X;
+                float newZPosition = transform.localPosition.z + verticalInput * table.TargetMoveSpeed * Time.deltaTime * Z;
+                if (newXPosition &gt; wallBorders[0] - border) { X = -1 * System.Math.Abs(X); run = false; }
+                else if (newXPosition &lt; wallBorders[1] + border) { X = System.Math.Abs(X); run = false; }
+                if(newZPosition &gt; wallBorders[2]-border){ Z = -1 * System.Math.Abs(Z); run = false;}
+                else if(newZPosition &lt; wallBorders[3]+border){ Z = System.Math.Abs(Z); run = false; }
+                transform.localPosition = new Vector3(newXPosition, transform.localPosition.y, newZPosition);
+                if ((Vector3.Distance(product.transform.localPosition, transform.localPosition) &lt; distance) &amp;&amp; run){
+                    float randomX = Random.Range(0f, 1f);
+                    float randomZ = Random.Range(0f, 1f);
+                    if (randomX &lt; 0.1f){X = -X;}
+                    if (randomZ &lt; 0.1f){Z = -Z;}
+                }
+            }
+        }
+    }
+
+    private void GetBorders(){
+        wallBorders = table.getBorders;
+        startrun = true;
+        isMovementOn = table.TargetRun;
+        var RandomSpeed = table.RandomTargetSpeed;
+        if(RandomSpeed){table.TargetMoveSpeed = Random.Range(2f,7f);}
+    }
+}</textarea>
+        </ul>
+      </div>
+    </div>
+    <b class="content-header">
+      <h2 id="graphs">
+        <a>Graphs</a>
+      </h2>
+    </b>
+    <div>
+      <h3>Environment:</h3>
+      <div style="display: flex;flex-wrap: wrap;gap: .1px;width: 100%;align-items: center;text-align: center;">
+        <div class="tables" style="width: 26%;padding: 0px;">
+          <h4 style="margin: 0px 0px 12px 0px;">Cumulative Reward</h4>
+          <img src="..\..\Versions\078\Environment\CumulativeReward__078.png" style="margin: 0;border:0;" width="100%">
+        </div>
+        <div class="tables" style="width: 26%;padding: 0px;">
+          <h4 style="margin: 0px 0px 12px 0px;">Episode Length</h4>
+          <img src="..\..\Versions\078\Environment\EpisodeLength__078.png" style="margin: 0;border:0;" width="100%">
+        </div>
+      </div>
+      <h3>Losses:</h3>
+      <div style="display: flex;flex-wrap: wrap;gap: .1px;width: 100%;align-items: center;text-align: center;">
+        <div class="tables" style="width: 26%;padding: 0px;">
+          <h4 style="margin: 0px 0px 12px 0px;">Policy Loss</h4>
+          <img src="..\..\Versions\078\Losses\PolicyLoss__078.png" style="margin: 0;border:0;" width="100%">
+        </div>
+        <div class="tables" style="width: 26%;padding: 0px;">
+          <h4 style="margin: 0px 0px 12px 0px;">Value Loss</h4>
+          <img src="..\..\Versions\078\Losses\ValueLoss__078.png" style="margin: 0;border:0;" width="100%">
+        </div>
+      </div>
+      <h3>Policy:</h3>
+      <div style="display: flex;flex-wrap: wrap;gap: .1px;width: 100%;align-items: center;text-align: center;">
+        <div class="tables" style="width: 26%;padding: 0px;">
+          <h4 style="margin: 0px 0px 12px 0px;">Beta</h4>
+          <img src="..\..\Versions\078\Policy\Beta__078.png" style="margin: 0;border:0;" width="100%">
+        </div>
+        <div class="tables" style="width: 26%;padding: 0px;">
+          <h4 style="margin: 0px 0px 12px 0px;">Entropy</h4>
+          <img src="..\..\Versions\078\Policy\Entropy__078.png" style="margin: 0;border:0;" width="100%">
+        </div>
+        <div class="tables" style="width: 26%;padding: 0px;">
+          <h4 style="margin: 0px 0px 12px 0px;">Epsilon</h4>
+          <img src="..\..\Versions\078\Policy\Epsilon__078.png" style="margin: 0;border:0;" width="100%">
+        </div>
+        <div class="tables" style="width: 26%;padding: 0px;">
+          <h4 style="margin: 0px 0px 12px 0px;">Extrinsic Reward</h4>
+          <img src="..\..\Versions\078\Policy\ExtrinsicReward__078.png" style="margin: 0;border:0;" width="100%">
+        </div>
+        <div class="tables" style="width: 26%;padding: 0px;">
+          <h4 style="margin: 0px 0px 12px 0px;">Extrinsic Value Estimate</h4>
+          <img src="..\..\Versions\078\Policy\ExtrinsicValueEstimate__078.png" style="margin: 0;border:0;" width="100%">
+        </div>
+        <div class="tables" style="width: 26%;padding: 0px;">
+          <h4 style="margin: 0px 0px 12px 0px;">Learning Rate</h4>
+          <img src="..\..\Versions\078\Policy\LearningRate__078.png" style="margin: 0;border:0;" width="100%">
+        </div>
+      </div>
+      <h3>Custom:</h3>
+      <div style="display: flex;flex-wrap: wrap;gap: .1px;width: 100%;align-items: center;text-align: center;">
+        <div class="tables" style="width: 26%;padding: 0px;">
+          <h4 style="margin: 0px 0px 12px 0px;">Avg Step</h4>
+          <img src="..\..\Versions\078\Custom\AvgStep__078.png" style="margin: 0;border:0;" width="100%">
+        </div>
+        <div class="tables" style="width: 26%;padding: 0px;">
+          <h4 style="margin: 0px 0px 12px 0px;">Avg Wall Number</h4>
+          <img src="..\..\Versions\078\Custom\AvgWallNumber__078.png" style="margin: 0;border:0;" width="100%">
+        </div>
+        <div class="tables" style="width: 26%;padding: 0px;">
+          <h4 style="margin: 0px 0px 12px 0px;">Completed Episodes</h4>
+          <img src="..\..\Versions\078\Custom\CompletedEpisodes__078.png" style="margin: 0;border:0;" width="100%">
+        </div>
+        <div class="tables" style="width: 26%;padding: 0px;">
+          <h4 style="margin: 0px 0px 12px 0px;">Freq</h4>
+          <img src="..\..\Versions\078\Custom\Freq__078.png" style="margin: 0;border:0;" width="100%">
+        </div>
+        <div class="tables" style="width: 26%;padding: 0px;">
+          <h4 style="margin: 0px 0px 12px 0px;">Wall Crash</h4>
+          <img src="..\..\Versions\078\Custom\WallCrash__078.png" style="margin: 0;border:0;" width="100%">
+        </div>
+        <div class="tables" style="width: 26%;padding: 0px;">
+          <h4 style="margin: 0px 0px 12px 0px;">Wall Difficulty</h4>
+          <img src="..\..\Versions\078\Custom\WallDifficulty__078.png" style="margin: 0;border:0;" width="100%">
+        </div>
+        <div class="tables" style="width: 26%;padding: 0px;">
+          <h4 style="margin: 0px 0px 12px 0px;">Win</h4>
+          <img src="..\..\Versions\078\Custom\Win__078.png" style="margin: 0;border:0;" width="100%">
+        </div>
+      </div>
+    </div>
+    <script src="..\script.js" type="text/javascript"></script>
+  <!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body></html>

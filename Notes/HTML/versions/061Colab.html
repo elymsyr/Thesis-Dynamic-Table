@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>061Colab</title>
+    <link href="..\style.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="top-left">
+      <a onclick="scrollToTop()">Go to Top</a>
+      <a onclick="shrunk()">Shrunk</a>
+      <a onclick="readCurrentHTMLFileAndSave()">Save</a>
+      <a href="../index.html" id="header">Back to Versions</a>
+    </div><br><br><br>
+    <h1>
+      <a class="content-header" onclick="toggleAccordion(this, 1)">061Colab</a>
+    </h1>
+    <div class="accordion-content">
+      <ol>
+        <li>
+          <a href="#notes" id="OLnotes">Notes</a>
+        </li>
+        <li id="OLreward">
+          <a href="#reward">Reward</a>
+        </li>
+        <li id="OLhowworks">
+          <a href="#howworks">How Works</a>
+        </li>
+        <li id="OLgraphs">
+          <a href="#graphs">Graphs</a>
+        </li>
+      </ol>
+    </div>
+    <b class="content-header" onclick="toggleAccordion(this, 2)">
+      <h2>
+        <a id="notes">Notes</a>
+      </h2>
+    </b>
+    <div class="accordion-content" id="textnotes">
+      <textarea cols="50" id="textAreaNotes" placeholder="Type or insert text here..." rows="5"></textarea>
+      <button onclick="createParagraph('textnotes', 'textAreaNotes')">Insert Text</button>
+    </div>
+    <b>
+      <h2 id="reward">
+        <a class="content-header" onclick="toggleAccordion(this, 3)">Principle &amp; Reward</a>
+      </h2>
+    </b>
+    <div class="accordion-content" id="textreward">
+      <textarea cols="50" id="textAreaReward" placeholder="Type or insert text here..." rows="5"></textarea>
+      <button onclick="createParagraph('textreward', 'textAreaReward')">Insert Text</button>
+    </div>
+    <b>
+      <h2 id="howworks">
+        <a class="content-header" onclick="toggleAccordion(this, 4)">How Works</a>
+      </h2>
+    </b>
+    <div class="accordion-content">
+      <div>
+        <ul>
+          <li style="display:flex;justify-content: flex-start;">
+            <a href="..\..\Versions\061Colab\Files\Scripts\configuration.yaml" target="_blank">configuration.yaml</a>
+            <p class="underline" onclick="toggleAccordion(this, 5)" style="margin:0px 10px;color:#919191;">show code</p>
+          </li>
+          <textarea class="accordion-content" cols="120" readonly="readonly" rows="20">default_settings: null
+behaviors:
+  AgentBehavior:
+    trainer_type: ppo
+    hyperparameters:
+      batch_size: 1024
+      buffer_size: 10240
+      learning_rate: 0.0003
+      beta: 0.005
+      epsilon: 0.2
+      lambd: 0.95
+      num_epoch: 3
+      shared_critic: false
+      learning_rate_schedule: linear
+      beta_schedule: linear
+      epsilon_schedule: linear
+    network_settings:
+      normalize: false
+      hidden_units: 256
+      num_layers: 3
+      vis_encode_type: simple
+      memory: null
+      goal_conditioning_type: hyper
+      deterministic: false
+    reward_signals:
+      extrinsic:
+        gamma: 0.99
+        strength: 1.0
+        network_settings:
+          normalize: false
+          hidden_units: 256
+          num_layers: 3
+          vis_encode_type: simple
+          memory: null
+          goal_conditioning_type: hyper
+          deterministic: false
+    init_path: null
+    keep_checkpoints: 5
+    checkpoint_interval: 500000
+    max_steps: 10000000
+    time_horizon: 64
+    summary_freq: 10000
+    threaded: false
+    self_play: null
+    behavioral_cloning: null
+env_settings:
+  env_path: /content/MLProject/Jupyter/b061/b061.x86_64
+  env_args: null
+  base_port: 5004
+  num_envs: 4
+  num_areas: 1
+  seed: -1
+  max_lifetime_restarts: 10
+  restarts_rate_limit_n: 1
+  restarts_rate_limit_period_s: 60
+engine_settings:
+  width: 84
+  height: 84
+  quality_level: 5
+  time_scale: 20.0
+  target_frame_rate: -1
+  capture_frame_rate: 60
+  no_graphics: true
+environment_parameters: null
+checkpoint_settings:
+  run_id: ColabTest
+  initialize_from: null
+  load_model: false
+  resume: true
+  force: false
+  train_model: false
+  inference: false
+  results_dir: results
+torch_settings:
+  device: cuda
+debug: false
+</textarea>
+          <li style="display:flex;justify-content: flex-start;">
+            <a href="..\..\Versions\061Colab\Files\Scripts\dynamicTable.cs" target="_blank">dynamicTable.cs</a>
+            <p class="underline" onclick="toggleAccordion(this, 6)" style="margin:0px 10px;color:#919191;">show code</p>
+          </li>
+          <textarea class="accordion-content" cols="120" readonly="readonly" rows="20">public class ChildObjectManagerv041 : Agent
+{
+    [SerializeField]
+    private bool switchBehavior = false;
+    [SerializeField]
+    private bool showUI = false;
+    private GameObject parentObject;
+    private TextMeshPro ui;
+    private int rows = 15;
+    private int columns = 15;
+    private Vector3 target_start;
+    private Vector3 product_start;
+    private float minY = 0f;
+    private float maxY = 2.9f;
+    [SerializeField]
+    private float move_speed = 8f;
+    [SerializeField]
+    private float distance_lim = 4.35f;
+    private Transform[,] childArray;
+    private Rigidbody productRigidbody;
+    [SerializeField]
+    private int actionLimit = 900;
+    private int actionCount = 0;
+    private Vector3[,] tableLoc;
+    private int gameCount = 0;
+    private float legalY;
+    private float startDistance;
+    [SerializeField]
+    private GameObject env;
+    [SerializeField]
+    private GameObject product;
+    [SerializeField]
+    private GameObject target;
+    private int win = 0;
+    [SerializeField]
+    private GameObject text;
+    private float delta;
+    private float distance;
+    private float deltaDistance = 0;
+    private void Awake()
+    {
+
+        if (text != null)
+        {
+            ui = text.GetComponent&lt;TextMeshPro&gt;();
+        }
+        productRigidbody = product.GetComponent&lt;Rigidbody&gt;();
+        legalY = product.transform.localPosition.y;
+        parentObject = transform.gameObject;
+        if (parentObject != null)
+        {
+            GetChildObjects();
+        }
+        else
+        {
+            UnityEngine.Debug.LogError(&quot;Parent object not assigned!&quot;);
+        }
+    }
+    private void GetChildObjects()
+    {
+        childArray = new Transform[rows, columns];
+        tableLoc = new Vector3[rows, columns];
+        int index = 0;
+
+        foreach (Transform child in parentObject.transform)
+        {
+            int i = index / rows;
+            int j = index % columns;
+            childArray[i, j] = child;
+            tableLoc[i, j] = child.transform.localPosition;
+            index++;
+        }
+    }
+
+    private void updateUI()
+    {
+        ui.text = &quot;Product States\nPosition: &quot;+product.transform.position+&quot;\nDistance to Target: &quot;+targetCloseness()+&quot;\nReward: &quot;+GetCumulativeReward()+&quot;\nDelta: &quot;+delta+&quot;\nAction Count: &quot;+actionCount+&quot;\nGame Count: &quot;+gameCount+&quot;\nWin Count: &quot;+win;
+    }
+    public void triggerReset(){
+        AddReward(-2f);
+        EndEpisode();
+    }
+    public void winReset(){
+        win++;
+        AddReward(2f);
+        EndEpisode();
+    }
+    private float targetCloseness()
+    {
+        float distance = Vector3.Distance(product.transform.localPosition, target.transform.localPosition);
+        return (float)Math.Round(distance - (int)distance, 2) + (int)distance;
+    }
+    private bool GetDistanceToChild(Transform child)
+    {
+        float distance = Vector3.Distance(env.transform.InverseTransformPoint(new Vector3(child.position.x, 0f, child.position.z)), env.transform.InverseTransformPoint(new Vector3(product.transform.position.x, 0f, product.transform.position.z)));
+        return distance &lt; distance_lim;
+    }
+    public override void OnActionReceived(ActionBuffers actions)
+    {
+        if (actionLimit &lt; actionCount)
+        {
+            AddReward(-1f);
+            EndEpisode();
+        }
+        actionCount++;
+        int index = 0;
+        foreach (Transform child in childArray)
+        {
+            if (child != null)
+            {
+                if (switchBehavior || GetDistanceToChild(child)){
+                    float newYPosition = child.localPosition.y + actions.ContinuousActions[index] * move_speed * Time.deltaTime;
+                    newYPosition = Mathf.Clamp(newYPosition, minY, maxY);
+                    child.localPosition = new Vector3(child.localPosition.x, newYPosition, child.localPosition.z);
+                }
+                else
+                {
+                    int i = index / rows;
+                    int j = index % columns;
+                    child.transform.localPosition = tableLoc[i, j];
+                }
+
+                index++;
+            }
+            else{
+                UnityEngine.Debug.Log(&quot;Null child founded!&quot;);
+            }
+        }
+        distance = targetCloseness();
+        delta = deltaDistance - distance;
+        if (showUI)
+        {
+            updateUI();
+        }
+        deltaDistance = distance;
+        AddReward(delta*Mathf.Abs(startDistance-distance)/startDistance);
+    }
+    public override void OnEpisodeBegin()
+    {
+        productRigidbody.velocity = Vector3.zero;
+        do {
+            target_start = randomPos();
+            product_start = randomPos();
+        } while (Vector3.Distance(target_start, product_start) &lt; 5);
+
+        target.transform.localPosition = target_start;
+        product.transform.localPosition = product_start;
+        startDistance = Vector3.Distance(target_start, product_start);
+
+        actionCount = 0;
+        for (int i = 0; i &lt; rows; i++)
+        {
+            for (int j = 0; j &lt; columns; j++)
+            {
+                childArray[i,j].transform.localPosition = tableLoc[i,j];
+            }
+        }
+        gameCount++;
+    }
+    public override void CollectObservations(VectorSensor sensor)
+    {
+        foreach (Transform child in childArray)
+        {
+            if (child != null)
+            {
+                sensor.AddObservation(child.localPosition.y);
+            }
+        }
+
+        sensor.AddObservation(product.transform.localPosition);
+        sensor.AddObservation(targetCloseness());
+        sensor.AddObservation(-43.83164f);
+        sensor.AddObservation(-22.29164f);
+        sensor.AddObservation(18.97933f);
+        sensor.AddObservation(-3.260668f);
+    }
+    private Vector3 randomPos(){
+        return new Vector3(UnityEngine.Random.Range(-39.52f, -26.7f), legalY, UnityEngine.Random.Range(1.51f, 14.05f));
+    }
+    public override void Heuristic(in ActionBuffers actionsOut)
+    {
+        ActionSegment&lt;float&gt; continuousActions = actionsOut.ContinuousActions;
+        for (int i = 0; i &lt; columns*rows; i++)
+        {
+            continuousActions[i] = UnityEngine.Random.Range(-1f, 1f);
+        }
+    }
+}
+
+</textarea>
+        </ul>
+      </div>
+    </div>
+    <b class="content-header">
+      <h2 id="graphs">
+        <a>Graphs</a>
+      </h2>
+    </b>
+    <div>
+      <h3>Environment:</h3>
+      <div style="display: flex;flex-wrap: wrap;gap: .1px;width: 100%;align-items: center;text-align: center;">
+        <div class="tables" style="width: 26%;padding: 0px;">
+          <h4 style="margin: 0px 0px 12px 0px;">Cumulative Reward</h4>
+          <img src="..\..\Versions\061Colab\Environment\CumulativeReward__061Colab.png" style="margin: 0;border:0;" width="100%">
+        </div>
+        <div class="tables" style="width: 26%;padding: 0px;">
+          <h4 style="margin: 0px 0px 12px 0px;">Episode Length</h4>
+          <img src="..\..\Versions\061Colab\Environment\EpisodeLength__061Colab.png" style="margin: 0;border:0;" width="100%">
+        </div>
+      </div>
+      <h3>Losses:</h3>
+      <div style="display: flex;flex-wrap: wrap;gap: .1px;width: 100%;align-items: center;text-align: center;">
+        <div class="tables" style="width: 26%;padding: 0px;">
+          <h4 style="margin: 0px 0px 12px 0px;">Policy Loss</h4>
+          <img src="..\..\Versions\061Colab\Losses\PolicyLoss__061Colab.png" style="margin: 0;border:0;" width="100%">
+        </div>
+        <div class="tables" style="width: 26%;padding: 0px;">
+          <h4 style="margin: 0px 0px 12px 0px;">Value Loss</h4>
+          <img src="..\..\Versions\061Colab\Losses\ValueLoss__061Colab.png" style="margin: 0;border:0;" width="100%">
+        </div>
+      </div>
+      <h3>Policy:</h3>
+      <div style="display: flex;flex-wrap: wrap;gap: .1px;width: 100%;align-items: center;text-align: center;">
+        <div class="tables" style="width: 26%;padding: 0px;">
+          <h4 style="margin: 0px 0px 12px 0px;">Beta</h4>
+          <img src="..\..\Versions\061Colab\Policy\Beta__061Colab.png" style="margin: 0;border:0;" width="100%">
+        </div>
+        <div class="tables" style="width: 26%;padding: 0px;">
+          <h4 style="margin: 0px 0px 12px 0px;">Entropy</h4>
+          <img src="..\..\Versions\061Colab\Policy\Entropy__061Colab.png" style="margin: 0;border:0;" width="100%">
+        </div>
+        <div class="tables" style="width: 26%;padding: 0px;">
+          <h4 style="margin: 0px 0px 12px 0px;">Epsilon</h4>
+          <img src="..\..\Versions\061Colab\Policy\Epsilon__061Colab.png" style="margin: 0;border:0;" width="100%">
+        </div>
+        <div class="tables" style="width: 26%;padding: 0px;">
+          <h4 style="margin: 0px 0px 12px 0px;">Extrinsic Reward</h4>
+          <img src="..\..\Versions\061Colab\Policy\ExtrinsicReward__061Colab.png" style="margin: 0;border:0;" width="100%">
+        </div>
+        <div class="tables" style="width: 26%;padding: 0px;">
+          <h4 style="margin: 0px 0px 12px 0px;">Extrinsic Value Estimate</h4>
+          <img src="..\..\Versions\061Colab\Policy\ExtrinsicValueEstimate__061Colab.png" style="margin: 0;border:0;" width="100%">
+        </div>
+        <div class="tables" style="width: 26%;padding: 0px;">
+          <h4 style="margin: 0px 0px 12px 0px;">Learning Rate</h4>
+          <img src="..\..\Versions\061Colab\Policy\LearningRate__061Colab.png" style="margin: 0;border:0;" width="100%">
+        </div>
+      </div>
+    </div>
+    <script src="..\script.js" type="text/javascript"></script>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>b080mTest</title>
+    <link href="..\style.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="top-left">
+      <a onclick="scrollToTop()">Go to Top</a>
+      <a onclick="shrunk()">Shrunk</a>
+      <a onclick="readCurrentHTMLFileAndSave()">Save</a>
+      <a href="../index.html" id="header">Back to Versions</a>
+    </div><br><br><br>
+    <h1>
+      <a class="content-header" onclick="toggleAccordion(this, 1)">b080mTest</a>
+    </h1>
+    <div class="accordion-content">
+      <ol>
+        <li>
+          <a href="#notes" id="OLnotes">Notes</a>
+        </li>
+        <li id="OLreward">
+          <a href="#reward">Reward</a>
+        </li>
+        <li id="OLgraphs">
+          <a href="#graphs">Graphs</a>
+        </li>
+      </ol>
+    </div>
+    <b class="content-header" onclick="toggleAccordion(this, 2)">
+      <h2>
+        <a id="notes">Notes</a>
+      </h2>
+    </b>
+    <div class="accordion-content" id="textnotes">
+      <textarea cols="50" id="textAreaNotes" placeholder="Type or insert text here..." rows="5"></textarea>
+      <button onclick="createParagraph('textnotes', 'textAreaNotes')">Insert Text</button>
+    </div>
+    <b>
+      <h2 id="reward">
+        <a class="content-header" onclick="toggleAccordion(this, 3)">Principle &amp; Reward</a>
+      </h2>
+    </b>
+    <div class="accordion-content" id="textreward">
+      <textarea cols="50" id="textAreaReward" placeholder="Type or insert text here..." rows="5"></textarea>
+      <button onclick="createParagraph('textreward', 'textAreaReward')">Insert Text</button>
+    </div>
+    <b class="content-header">
+      <h2 id="graphs">
+        <a>Graphs</a>
+      </h2>
+    </b>
+    <div></div>
+    <script src="..\script.js" type="text/javascript"></script>
+  </body>
+</html>

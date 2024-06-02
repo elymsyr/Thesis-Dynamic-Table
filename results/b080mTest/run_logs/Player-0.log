@@ -1,0 +1,466 @@
+Mono path[0] = 'C:/Users/orhun/OneDrive/Belgeler/GitHub/Dynamic-Table/Builds/b080mCopy/DynamicTable_Data/Managed'
+Mono config path = 'C:/Users/orhun/OneDrive/Belgeler/GitHub/Dynamic-Table/Builds/b080mCopy/MonoBleedingEdge/etc'
+Found 1 interfaces on host : 0) 192.168.42.160
+Player connection [21572] Multi-casting "[IP] 192.168.42.160 [Port] 55004 [Flags] 2 [Guid] 680478964 [EditorId] 600505976 [Version] 1048832 [Id] WindowsPlayer(2,EREN) [Debug] 0 [PackageName] WindowsPlayer [ProjectName] DynamicTable" to [225.0.0.222:54997]...
+
+[Physics::Module] Initialized MultithreadedJobDispatcher with 7 workers.
+Initialize engine version: 2022.3.20f1 (61c2feb0970d)
+[Subsystems] Discovering subsystems at path C:/Users/orhun/OneDrive/Belgeler/GitHub/Dynamic-Table/Builds/b080mCopy/DynamicTable_Data/UnitySubsystems
+GfxDevice: creating device client; threaded=1; jobified=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1650 (ID=0x1f91)
+    Vendor:   NVIDIA
+    VRAM:     3935 MB
+    Driver:   31.0.15.5222
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.334 seconds
+- Finished resetting the current domain, in  0.004 seconds
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 5.377900 ms
+No path found.
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at C:/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+AStar:PathFinder (UnityEngine.Transform,UnityEngine.Transform) (at C:/Users/orhun/OneDrive/Belgeler/GitHub/Dynamic-Table/Assets/Scripts/v080/PathFinder.cs:57)
+AStar:Update () (at C:/Users/orhun/OneDrive/Belgeler/GitHub/Dynamic-Table/Assets/Scripts/v080/PathFinder.cs:37)
+
+(Filename: C:/Users/orhun/OneDrive/Belgeler/GitHub/Dynamic-Table/Assets/Scripts/v080/PathFinder.cs Line: 57)
+
+No path found.
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at C:/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+AStar:PathFinder (UnityEngine.Transform,UnityEngine.Transform) (at C:/Users/orhun/OneDrive/Belgeler/GitHub/Dynamic-Table/Assets/Scripts/v080/PathFinder.cs:57)
+AStar:Update () (at C:/Users/orhun/OneDrive/Belgeler/GitHub/Dynamic-Table/Assets/Scripts/v080/PathFinder.cs:37)
+
+(Filename: C:/Users/orhun/OneDrive/Belgeler/GitHub/Dynamic-Table/Assets/Scripts/v080/PathFinder.cs Line: 57)
+
+No path found.
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at C:/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+AStar:PathFinder (UnityEngine.Transform,UnityEngine.Transform) (at C:/Users/orhun/OneDrive/Belgeler/GitHub/Dynamic-Table/Assets/Scripts/v080/PathFinder.cs:57)
+AStar:Update () (at C:/Users/orhun/OneDrive/Belgeler/GitHub/Dynamic-Table/Assets/Scripts/v080/PathFinder.cs:37)
+
+(Filename: C:/Users/orhun/OneDrive/Belgeler/GitHub/Dynamic-Table/Assets/Scripts/v080/PathFinder.cs Line: 57)
+
+No path found.
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at C:/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+AStar:PathFinder (UnityEngine.Transform,UnityEngine.Transform) (at C:/Users/orhun/OneDrive/Belgeler/GitHub/Dynamic-Table/Assets/Scripts/v080/PathFinder.cs:57)
+AStar:Update () (at C:/Users/orhun/OneDrive/Belgeler/GitHub/Dynamic-Table/Assets/Scripts/v080/PathFinder.cs:37)
+
+(Filename: C:/Users/orhun/OneDrive/Belgeler/GitHub/Dynamic-Table/Assets/Scripts/v080/PathFinder.cs Line: 57)
+
+No path found.
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at C:/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+AStar:PathFinder (UnityEngine.Transform,UnityEngine.Transform) (at C:/Users/orhun/OneDrive/Belgeler/GitHub/Dynamic-Table/Assets/Scripts/v080/PathFinder.cs:57)
+AStar:Update () (at C:/Users/orhun/OneDrive/Belgeler/GitHub/Dynamic-Table/Assets/Scripts/v080/PathFinder.cs:37)
+
+(Filename: C:/Users/orhun/OneDrive/Belgeler/GitHub/Dynamic-Table/Assets/Scripts/v080/PathFinder.cs Line: 57)
+
+No path found.
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at C:/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+AStar:PathFinder (UnityEngine.Transform,UnityEngine.Transform) (at C:/Users/orhun/OneDrive/Belgeler/GitHub/Dynamic-Table/Assets/Scripts/v080/PathFinder.cs:57)
+AStar:Update () (at C:/Users/orhun/OneDrive/Belgeler/GitHub/Dynamic-Table/Assets/Scripts/v080/PathFinder.cs:37)
+
+(Filename: C:/Users/orhun/OneDrive/Belgeler/GitHub/Dynamic-Table/Assets/Scripts/v080/PathFinder.cs Line: 57)
+
+No path found.
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at C:/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+AStar:PathFinder (UnityEngine.Transform,UnityEngine.Transform) (at C:/Users/orhun/OneDrive/Belgeler/GitHub/Dynamic-Table/Assets/Scripts/v080/PathFinder.cs:57)
+AStar:Update () (at C:/Users/orhun/OneDrive/Belgeler/GitHub/Dynamic-Table/Assets/Scripts/v080/PathFinder.cs:37)
+
+(Filename: C:/Users/orhun/OneDrive/Belgeler/GitHub/Dynamic-Table/Assets/Scripts/v080/PathFinder.cs Line: 57)
+
+No path found.
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at C:/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+AStar:PathFinder (UnityEngine.Transform,UnityEngine.Transform) (at C:/Users/orhun/OneDrive/Belgeler/GitHub/Dynamic-Table/Assets/Scripts/v080/PathFinder.cs:57)
+AStar:Update () (at C:/Users/orhun/OneDrive/Belgeler/GitHub/Dynamic-Table/Assets/Scripts/v080/PathFinder.cs:37)
+
+(Filename: C:/Users/orhun/OneDrive/Belgeler/GitHub/Dynamic-Table/Assets/Scripts/v080/PathFinder.cs Line: 57)
+
+No path found.
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at C:/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+AStar:PathFinder (UnityEngine.Transform,UnityEngine.Transform) (at C:/Users/orhun/OneDrive/Belgeler/GitHub/Dynamic-Table/Assets/Scripts/v080/PathFinder.cs:57)
+AStar:Update () (at C:/Users/orhun/OneDrive/Belgeler/GitHub/Dynamic-Table/Assets/Scripts/v080/PathFinder.cs:37)
+
+(Filename: C:/Users/orhun/OneDrive/Belgeler/GitHub/Dynamic-Table/Assets/Scripts/v080/PathFinder.cs Line: 57)
+
+No path found.
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at C:/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+AStar:PathFinder (UnityEngine.Transform,UnityEngine.Transform) (at C:/Users/orhun/OneDrive/Belgeler/GitHub/Dynamic-Table/Assets/Scripts/v080/PathFinder.cs:57)
+AStar:Update () (at C:/Users/orhun/OneDrive/Belgeler/GitHub/Dynamic-Table/Assets/Scripts/v080/PathFinder.cs:37)
+
+(Filename: C:/Users/orhun/OneDrive/Belgeler/GitHub/Dynamic-Table/Assets/Scripts/v080/PathFinder.cs Line: 57)
+
+No path found.
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at C:/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+AStar:PathFinder (UnityEngine.Transform,UnityEngine.Transform) (at C:/Users/orhun/OneDrive/Belgeler/GitHub/Dynamic-Table/Assets/Scripts/v080/PathFinder.cs:57)
+AStar:Update () (at C:/Users/orhun/OneDrive/Belgeler/GitHub/Dynamic-Table/Assets/Scripts/v080/PathFinder.cs:37)
+
+(Filename: C:/Users/orhun/OneDrive/Belgeler/GitHub/Dynamic-Table/Assets/Scripts/v080/PathFinder.cs Line: 57)
+
+No path found.
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at C:/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+AStar:PathFinder (UnityEngine.Transform,UnityEngine.Transform) (at C:/Users/orhun/OneDrive/Belgeler/GitHub/Dynamic-Table/Assets/Scripts/v080/PathFinder.cs:57)
+AStar:Update () (at C:/Users/orhun/OneDrive/Belgeler/GitHub/Dynamic-Table/Assets/Scripts/v080/PathFinder.cs:37)
+
+(Filename: C:/Users/orhun/OneDrive/Belgeler/GitHub/Dynamic-Table/Assets/Scripts/v080/PathFinder.cs Line: 57)
+
+No path found.
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at C:/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+AStar:PathFinder (UnityEngine.Transform,UnityEngine.Transform) (at C:/Users/orhun/OneDrive/Belgeler/GitHub/Dynamic-Table/Assets/Scripts/v080/PathFinder.cs:57)
+AStar:Update () (at C:/Users/orhun/OneDrive/Belgeler/GitHub/Dynamic-Table/Assets/Scripts/v080/PathFinder.cs:37)
+
+(Filename: C:/Users/orhun/OneDrive/Belgeler/GitHub/Dynamic-Table/Assets/Scripts/v080/PathFinder.cs Line: 57)
+
+No path found.
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at C:/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+AStar:PathFinder (UnityEngine.Transform,UnityEngine.Transform) (at C:/Users/orhun/OneDrive/Belgeler/GitHub/Dynamic-Table/Assets/Scripts/v080/PathFinder.cs:57)
+AStar:Update () (at C:/Users/orhun/OneDrive/Belgeler/GitHub/Dynamic-Table/Assets/Scripts/v080/PathFinder.cs:37)
+
+(Filename: C:/Users/orhun/OneDrive/Belgeler/GitHub/Dynamic-Table/Assets/Scripts/v080/PathFinder.cs Line: 57)
+
+No path found.
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at C:/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+AStar:PathFinder (UnityEngine.Transform,UnityEngine.Transform) (at C:/Users/orhun/OneDrive/Belgeler/GitHub/Dynamic-Table/Assets/Scripts/v080/PathFinder.cs:57)
+AStar:Update () (at C:/Users/orhun/OneDrive/Belgeler/GitHub/Dynamic-Table/Assets/Scripts/v080/PathFinder.cs:37)
+
+(Filename: C:/Users/orhun/OneDrive/Belgeler/GitHub/Dynamic-Table/Assets/Scripts/v080/PathFinder.cs Line: 57)
+
+No path found.
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at C:/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+AStar:PathFinder (UnityEngine.Transform,UnityEngine.Transform) (at C:/Users/orhun/OneDrive/Belgeler/GitHub/Dynamic-Table/Assets/Scripts/v080/PathFinder.cs:57)
+AStar:Update () (at C:/Users/orhun/OneDrive/Belgeler/GitHub/Dynamic-Table/Assets/Scripts/v080/PathFinder.cs:37)
+
+(Filename: C:/Users/orhun/OneDrive/Belgeler/GitHub/Dynamic-Table/Assets/Scripts/v080/PathFinder.cs Line: 57)
+
+Setting up 4 worker threads for Enlighten.
+PlayerConnection::CleanupMemory Statistics:
+[ALLOC_TEMP_TLS] TLS Allocator
+  StackAllocators : 
+    [ALLOC_TEMP_MAIN]
+      Peak usage frame count: [64.0 KB-128.0 KB]: 40 frames, [128.0 KB-256.0 KB]: 917 frames, [2.0 MB-4.0 MB]: 1 frames
+      Initial Block Size 4.0 MB
+      Current Block Size 4.0 MB
+      Peak Allocated Bytes 2.1 MB
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.worker 3]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.worker 6]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_AUDIO_FMOD (WASAPI) feeder thread]
+      Initial Block Size 64.0 KB
+      Current Block Size 64.0 KB
+      Peak Allocated Bytes 168 B
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.worker 2]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_AUDIO_FMOD mixer thread]
+      Initial Block Size 64.0 KB
+      Current Block Size 64.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.worker 8]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.worker 15]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.worker 0]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_Job.worker 6]
+      Initial Block Size 256.0 KB
+      Current Block Size 256.0 KB
+      Peak Allocated Bytes 9.4 KB
+      Overflow Count 0
+    [ALLOC_TEMP_BatchDeleteObjects]
+      Initial Block Size 64.0 KB
+      Current Block Size 64.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_AUDIO_FMOD stream thread]
+      Initial Block Size 64.0 KB
+      Current Block Size 64.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_Job.worker 4]
+      Initial Block Size 256.0 KB
+      Current Block Size 256.0 KB
+      Peak Allocated Bytes 9.4 KB
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.worker 1]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_Job.worker 1]
+      Initial Block Size 256.0 KB
+      Current Block Size 256.0 KB
+      Peak Allocated Bytes 9.7 KB
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.worker 5]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_Loading.PreloadManager]
+      Initial Block Size 256.0 KB
+      Current Block Size 500.0 KB
+      Peak Allocated Bytes 499.8 KB
+      Overflow Count 8
+    [ALLOC_TEMP_Background Job.worker 4]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.worker 7]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.worker 11]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.worker 10]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_Job.worker 5]
+      Initial Block Size 256.0 KB
+      Current Block Size 256.0 KB
+      Peak Allocated Bytes 9.4 KB
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.worker 12]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.worker 13]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_AssetGarbageCollectorHelper] x 7
+      Initial Block Size 64.0 KB
+      Current Block Size 64.0 KB
+      Peak Allocated Bytes 138 B
+      Overflow Count 0
+    [ALLOC_TEMP_Profiler.Dispatcher]
+      Initial Block Size 64.0 KB
+      Current Block Size 64.0 KB
+      Peak Allocated Bytes 456 B
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.worker 14]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_Job.worker 0]
+      Initial Block Size 256.0 KB
+      Current Block Size 256.0 KB
+      Peak Allocated Bytes 9.4 KB
+      Overflow Count 0
+    [ALLOC_TEMP_Background Job.worker 9]
+      Initial Block Size 32.0 KB
+      Current Block Size 32.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_EnlightenWorker] x 4
+      Initial Block Size 64.0 KB
+      Current Block Size 64.0 KB
+      Peak Allocated Bytes 54 B
+      Overflow Count 0
+    [ALLOC_TEMP_UnityGfxDeviceWorker]
+      Initial Block Size 256.0 KB
+      Current Block Size 256.0 KB
+      Peak Allocated Bytes 13.3 KB
+      Overflow Count 0
+    [ALLOC_TEMP_Job.worker 3]
+      Initial Block Size 256.0 KB
+      Current Block Size 256.0 KB
+      Peak Allocated Bytes 9.4 KB
+      Overflow Count 0
+    [ALLOC_TEMP_Job.worker 2]
+      Initial Block Size 256.0 KB
+      Current Block Size 256.0 KB
+      Peak Allocated Bytes 9.4 KB
+      Overflow Count 0
+    [ALLOC_TEMP_Loading.AsyncRead]
+      Initial Block Size 64.0 KB
+      Current Block Size 64.0 KB
+      Peak Allocated Bytes 384 B
+      Overflow Count 0
+[ALLOC_MEMORYPROFILER]
+  Peak usage frame count: [1.0 MB-2.0 MB]: 958 frames
+  Requested Block Size 1.0 MB
+  Peak Block count 2
+  Peak Allocated memory 1.6 MB
+  Peak Large allocation bytes 0 B
+[ALLOC_DEFAULT] Dual Thread Allocator
+  Peak main deferred allocation count 66
+    [ALLOC_BUCKET]
+      Large Block size 4.0 MB
+      Used Block count 1
+      Peak Allocated bytes 2.1 MB
+    [ALLOC_DEFAULT_MAIN]
+      Peak usage frame count: [16.0 MB-32.0 MB]: 958 frames
+      Requested Block Size 16.0 MB
+      Peak Block count 2
+      Peak Allocated memory 26.5 MB
+      Peak Large allocation bytes 8.0 MB
+    [ALLOC_DEFAULT_THREAD]
+      Peak usage frame count: [16.0 MB-32.0 MB]: 958 frames
+      Requested Block Size 16.0 MB
+      Peak Block count 1
+      Peak Allocated memory 25.5 MB
+      Peak Large allocation bytes 16.0 MB
+[ALLOC_TEMP_JOB_1_FRAME]
+  Initial Block Size 2.0 MB
+  Used Block Count 0
+  Overflow Count (too large) 0
+  Overflow Count (full) 0
+[ALLOC_TEMP_JOB_2_FRAMES]
+  Initial Block Size 2.0 MB
+  Used Block Count 0
+  Overflow Count (too large) 0
+  Overflow Count (full) 0
+[ALLOC_TEMP_JOB_4_FRAMES (JobTemp)]
+  Initial Block Size 2.0 MB
+  Used Block Count 1
+  Overflow Count (too large) 0
+  Overflow Count (full) 0
+[ALLOC_TEMP_JOB_ASYNC (Background)]
+  Initial Block Size 1.0 MB
+  Used Block Count 1
+  Overflow Count (too large) 0
+  Overflow Count (full) 0
+[ALLOC_GFX] Dual Thread Allocator
+  Peak main deferred allocation count 1
+    [ALLOC_BUCKET]
+      Large Block size 4.0 MB
+      Used Block count 1
+      Peak Allocated bytes 2.1 MB
+    [ALLOC_GFX_MAIN]
+      Peak usage frame count: [32.0 KB-64.0 KB]: 957 frames, [64.0 KB-128.0 KB]: 1 frames
+      Requested Block Size 16.0 MB
+      Peak Block count 1
+      Peak Allocated memory 67.4 KB
+      Peak Large allocation bytes 0 B
+    [ALLOC_GFX_THREAD]
+      Peak usage frame count: [2.0 MB-4.0 MB]: 62 frames, [4.0 MB-8.0 MB]: 896 frames
+      Requested Block Size 16.0 MB
+      Peak Block count 1
+      Peak Allocated memory 4.0 MB
+      Peak Large allocation bytes 0 B
+[ALLOC_CACHEOBJECTS] Dual Thread Allocator
+  Peak main deferred allocation count 2
+    [ALLOC_BUCKET]
+      Large Block size 4.0 MB
+      Used Block count 1
+      Peak Allocated bytes 2.1 MB
+    [ALLOC_CACHEOBJECTS_MAIN]
+      Peak usage frame count: [2.0 MB-4.0 MB]: 958 frames
+      Requested Block Size 4.0 MB
+      Peak Block count 1
+      Peak Allocated memory 2.7 MB
+      Peak Large allocation bytes 0 B
+    [ALLOC_CACHEOBJECTS_THREAD]
+      Peak usage frame count: [8.0 MB-16.0 MB]: 957 frames, [16.0 MB-32.0 MB]: 1 frames
+      Requested Block Size 4.0 MB
+      Peak Block count 8
+      Peak Allocated memory 27.2 MB
+      Peak Large allocation bytes 0 B
+[ALLOC_TYPETREE] Dual Thread Allocator
+  Peak main deferred allocation count 0
+    [ALLOC_BUCKET]
+      Large Block size 4.0 MB
+      Used Block count 1
+      Peak Allocated bytes 2.1 MB
+    [ALLOC_TYPETREE_MAIN]
+      Peak usage frame count: [4.0 KB-8.0 KB]: 958 frames
+      Requested Block Size 2.0 MB
+      Peak Block count 1
+      Peak Allocated memory 4.2 KB
+      Peak Large allocation bytes 0 B
+    [ALLOC_TYPETREE_THREAD]
+      Peak usage frame count: [0-1.0 KB]: 958 frames
+      Requested Block Size 2.0 MB
+      Peak Block count 0
+      Peak Allocated memory 0 B
+      Peak Large allocation bytes 0 B
+[ALLOC_PROFILER]
+  Peak usage frame count: [256.0 KB-0.5 MB]: 957 frames, [32.0 MB-64.0 MB]: 1 frames
+  Requested Block Size 16.0 MB
+  Peak Block count 3
+  Peak Allocated memory 33.3 MB
+  Peak Large allocation bytes 0 B
+    [ALLOC_PROFILER_BUCKET]
+      Large Block size 4.0 MB
+      Used Block count 1
+      Peak Allocated bytes 65.8 KB
+##utp:{"type":"MemoryLeaks","version":2,"phase":"Immediate","time":1714215017404,"processId":4648,"allocatedMemory":25959,"memoryLabels":[{"Default":-128},{"Thread":2016},{"Manager":9064},{"GfxDevice":72},{"GfxThread":9856},{"Serialization":508},{"String":155},{"HashMap":2304},{"PoolAlloc":112},{"VR":1776},{"Subsystems":96},{"CoreBusinessMetrics":128}]}

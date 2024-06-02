@@ -1,0 +1,29 @@
+{
+    "Dynamic Table": {
+        "checkpoints": [
+            {
+                "steps": 306165,
+                "file_path": "/content/drive/MyDrive/results/b076_stack_test/Dynamic Table/Dynamic Table-306165.onnx",
+                "reward": 0.6346701325279095,
+                "creation_time": 1712528509.5550134,
+                "auxillary_file_paths": [
+                    "/content/drive/MyDrive/results/b076_stack_test/Dynamic Table/Dynamic Table-306165.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 306165,
+            "file_path": "/content/drive/MyDrive/results/b076_stack_test/Dynamic Table.onnx",
+            "reward": 0.6346701325279095,
+            "creation_time": 1712528509.5550134,
+            "auxillary_file_paths": [
+                "/content/drive/MyDrive/results/b076_stack_test/Dynamic Table/Dynamic Table-306165.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.0.0",
+        "torch_version": "2.2.1+cu121"
+    }
+}

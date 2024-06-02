@@ -1,0 +1,65 @@
+{
+    "Dynamic Table": {
+        "checkpoints": [
+            {
+                "steps": 3360405,
+                "file_path": "results/0.7.22-Colab02/Dynamic Table/Dynamic Table-3360405.onnx",
+                "reward": 1.115557199716568,
+                "creation_time": 1711386943.042003,
+                "auxillary_file_paths": [
+                    "results/0.7.22-Colab02/Dynamic Table/Dynamic Table-3360405.pt"
+                ]
+            },
+            {
+                "steps": 3499986,
+                "file_path": "results/0.7.22-Colab02/Dynamic Table/Dynamic Table-3499986.onnx",
+                "reward": 1.4147917202409404,
+                "creation_time": 1711388252.5882065,
+                "auxillary_file_paths": [
+                    "results/0.7.22-Colab02/Dynamic Table/Dynamic Table-3499986.pt"
+                ]
+            },
+            {
+                "steps": 3999954,
+                "file_path": "results/0.7.22-Colab02/Dynamic Table/Dynamic Table-3999954.onnx",
+                "reward": 1.053067222335621,
+                "creation_time": 1711392480.4648254,
+                "auxillary_file_paths": [
+                    "results/0.7.22-Colab02/Dynamic Table/Dynamic Table-3999954.pt"
+                ]
+            },
+            {
+                "steps": 4499961,
+                "file_path": "results/0.7.22-Colab02/Dynamic Table/Dynamic Table-4499961.onnx",
+                "reward": 1.2623481080979109,
+                "creation_time": 1711396691.7187006,
+                "auxillary_file_paths": [
+                    "results/0.7.22-Colab02/Dynamic Table/Dynamic Table-4499961.pt"
+                ]
+            },
+            {
+                "steps": 4645674,
+                "file_path": "results/0.7.22-Colab02/Dynamic Table/Dynamic Table-4645674.onnx",
+                "reward": 1.1486613436749107,
+                "creation_time": 1711397975.114872,
+                "auxillary_file_paths": [
+                    "results/0.7.22-Colab02/Dynamic Table/Dynamic Table-4645674.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 4645674,
+            "file_path": "results/0.7.22-Colab02/Dynamic Table.onnx",
+            "reward": 1.1486613436749107,
+            "creation_time": 1711397975.114872,
+            "auxillary_file_paths": [
+                "results/0.7.22-Colab02/Dynamic Table/Dynamic Table-4645674.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.0.0",
+        "torch_version": "2.2.1+cu121"
+    }
+}

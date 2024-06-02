@@ -1,0 +1,56 @@
+{
+    "AgentBehavior": {
+        "checkpoints": [
+            {
+                "steps": 499947,
+                "file_path": "results\\01TestRun011\\AgentBehavior\\AgentBehavior-499947.onnx",
+                "reward": -10.70142533892677,
+                "creation_time": 1709858430.7604127,
+                "auxillary_file_paths": [
+                    "results\\01TestRun011\\AgentBehavior\\AgentBehavior-499947.pt"
+                ]
+            },
+            {
+                "steps": 500011,
+                "file_path": "results\\01TestRun011\\AgentBehavior\\AgentBehavior-500011.onnx",
+                "reward": -10.70142533892677,
+                "creation_time": 1709858430.8932626,
+                "auxillary_file_paths": [
+                    "results\\01TestRun011\\AgentBehavior\\AgentBehavior-500011.pt"
+                ]
+            },
+            {
+                "steps": 500011,
+                "file_path": "results\\01TestRun011\\AgentBehavior\\AgentBehavior-500011.onnx",
+                "reward": null,
+                "creation_time": 1709878640.737296,
+                "auxillary_file_paths": [
+                    "results\\01TestRun011\\AgentBehavior\\AgentBehavior-500011.pt"
+                ]
+            },
+            {
+                "steps": 500011,
+                "file_path": "results\\01TestRun011\\AgentBehavior\\AgentBehavior-500011.onnx",
+                "reward": null,
+                "creation_time": 1709880167.3784432,
+                "auxillary_file_paths": [
+                    "results\\01TestRun011\\AgentBehavior\\AgentBehavior-500011.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 500011,
+            "file_path": "results\\01TestRun011\\AgentBehavior.onnx",
+            "reward": null,
+            "creation_time": 1709880167.3784432,
+            "auxillary_file_paths": [
+                "results\\01TestRun011\\AgentBehavior\\AgentBehavior-500011.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.30.0",
+        "torch_version": "2.2.1"
+    }
+}

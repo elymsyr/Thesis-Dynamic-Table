@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>b090maze</title>
+    <link href="..\style.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="top-left">
+      <a onclick="scrollToTop()">Go to Top</a>
+      <a onclick="shrunk()">Shrunk</a>
+      <a onclick="readCurrentHTMLFileAndSave()">Save</a>
+      <a href="../index.html" id="header">Back to Versions</a>
+    </div><br><br><br>
+    <h1>
+      <a class="content-header" onclick="toggleAccordion(this, 1)">b090maze</a>
+    </h1>
+    <div class="accordion-content">
+      <ol>
+        <li>
+          <a href="#notes" id="OLnotes">Notes</a>
+        </li>
+        <li id="OLreward">
+          <a href="#reward">Reward</a>
+        </li>
+        <li id="OLgraphs">
+          <a href="#graphs">Graphs</a>
+        </li>
+      </ol>
+    </div>
+    <b class="content-header" onclick="toggleAccordion(this, 2)">
+      <h2>
+        <a id="notes">Notes</a>
+      </h2>
+    </b>
+    <div class="accordion-content" id="textnotes">
+      <textarea cols="50" id="textAreaNotes" placeholder="Type or insert text here..." rows="5"></textarea>
+      <button onclick="createParagraph('textnotes', 'textAreaNotes')">Insert Text</button>
+    </div>
+    <b>
+      <h2 id="reward">
+        <a class="content-header" onclick="toggleAccordion(this, 3)">Principle &amp; Reward</a>
+      </h2>
+    </b>
+    <div class="accordion-content" id="textreward">
+      <textarea cols="50" id="textAreaReward" placeholder="Type or insert text here..." rows="5"></textarea>
+      <button onclick="createParagraph('textreward', 'textAreaReward')">Insert Text</button>
+    </div>
+    <b class="content-header">
+      <h2 id="graphs">
+        <a>Graphs</a>
+      </h2>
+    </b>
+    <div>
+      <h3>Environment:</h3>
+      <div style="display: flex;flex-wrap: wrap;gap: .1px;width: 100%;align-items: center;text-align: center;">
+        <div class="tables" style="width: 26%;padding: 0px;">
+          <h4 style="margin: 0px 0px 12px 0px;">Cumulative Reward</h4>
+          <img src="..\..\Versions\b090maze\Environment\CumulativeReward__b090maze.png" style="margin: 0;border:0;" width="100%">
+        </div>
+        <div class="tables" style="width: 26%;padding: 0px;">
+          <h4 style="margin: 0px 0px 12px 0px;">Episode Length</h4>
+          <img src="..\..\Versions\b090maze\Environment\EpisodeLength__b090maze.png" style="margin: 0;border:0;" width="100%">
+        </div>
+      </div>
+      <h3>Losses:</h3>
+      <div style="display: flex;flex-wrap: wrap;gap: .1px;width: 100%;align-items: center;text-align: center;">
+        <div class="tables" style="width: 26%;padding: 0px;">
+          <h4 style="margin: 0px 0px 12px 0px;">Policy Loss</h4>
+          <img src="..\..\Versions\b090maze\Losses\PolicyLoss__b090maze.png" style="margin: 0;border:0;" width="100%">
+        </div>
+        <div class="tables" style="width: 26%;padding: 0px;">
+          <h4 style="margin: 0px 0px 12px 0px;">Value Loss</h4>
+          <img src="..\..\Versions\b090maze\Losses\ValueLoss__b090maze.png" style="margin: 0;border:0;" width="100%">
+        </div>
+      </div>
+      <h3>Policy:</h3>
+      <div style="display: flex;flex-wrap: wrap;gap: .1px;width: 100%;align-items: center;text-align: center;">
+        <div class="tables" style="width: 26%;padding: 0px;">
+          <h4 style="margin: 0px 0px 12px 0px;">Beta</h4>
+          <img src="..\..\Versions\b090maze\Policy\Beta__b090maze.png" style="margin: 0;border:0;" width="100%">
+        </div>
+        <div class="tables" style="width: 26%;padding: 0px;">
+          <h4 style="margin: 0px 0px 12px 0px;">Entropy</h4>
+          <img src="..\..\Versions\b090maze\Policy\Entropy__b090maze.png" style="margin: 0;border:0;" width="100%">
+        </div>
+        <div class="tables" style="width: 26%;padding: 0px;">
+          <h4 style="margin: 0px 0px 12px 0px;">Epsilon</h4>
+          <img src="..\..\Versions\b090maze\Policy\Epsilon__b090maze.png" style="margin: 0;border:0;" width="100%">
+        </div>
+        <div class="tables" style="width: 26%;padding: 0px;">
+          <h4 style="margin: 0px 0px 12px 0px;">Extrinsic Reward</h4>
+          <img src="..\..\Versions\b090maze\Policy\ExtrinsicReward__b090maze.png" style="margin: 0;border:0;" width="100%">
+        </div>
+        <div class="tables" style="width: 26%;padding: 0px;">
+          <h4 style="margin: 0px 0px 12px 0px;">Extrinsic Value Estimate</h4>
+          <img src="..\..\Versions\b090maze\Policy\ExtrinsicValueEstimate__b090maze.png" style="margin: 0;border:0;" width="100%">
+        </div>
+        <div class="tables" style="width: 26%;padding: 0px;">
+          <h4 style="margin: 0px 0px 12px 0px;">Learning Rate</h4>
+          <img src="..\..\Versions\b090maze\Policy\LearningRate__b090maze.png" style="margin: 0;border:0;" width="100%">
+        </div>
+      </div>
+      <h3>Custom:</h3>
+      <div style="display: flex;flex-wrap: wrap;gap: .1px;width: 100%;align-items: center;text-align: center;">
+        <div class="tables" style="width: 26%;padding: 0px;">
+          <h4 style="margin: 0px 0px 12px 0px;">Avg Step</h4>
+          <img src="..\..\Versions\b090maze\Custom\AvgStep__b090maze.png" style="margin: 0;border:0;" width="100%">
+        </div>
+        <div class="tables" style="width: 26%;padding: 0px;">
+          <h4 style="margin: 0px 0px 12px 0px;">Checkpoints</h4>
+          <img src="..\..\Versions\b090maze\Custom\Checkpoints__b090maze.png" style="margin: 0;border:0;" width="100%">
+        </div>
+        <div class="tables" style="width: 26%;padding: 0px;">
+          <h4 style="margin: 0px 0px 12px 0px;">Completed Episodes</h4>
+          <img src="..\..\Versions\b090maze\Custom\CompletedEpisodes__b090maze.png" style="margin: 0;border:0;" width="100%">
+        </div>
+        <div class="tables" style="width: 26%;padding: 0px;">
+          <h4 style="margin: 0px 0px 12px 0px;">Maze Number</h4>
+          <img src="..\..\Versions\b090maze\Custom\MazeNumber__b090maze.png" style="margin: 0;border:0;" width="100%">
+        </div>
+        <div class="tables" style="width: 26%;padding: 0px;">
+          <h4 style="margin: 0px 0px 12px 0px;">Win Percentageof Last100 Episodes</h4>
+          <img src="..\..\Versions\b090maze\Custom\WinPercentageofLast100Episodes__b090maze.png" style="margin: 0;border:0;" width="100%">
+        </div>
+      </div>
+    </div>
+    <script src="..\script.js" type="text/javascript"></script>
+  </body>
+</html>

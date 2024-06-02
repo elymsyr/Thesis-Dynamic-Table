@@ -1,0 +1,65 @@
+{
+    "Dynamic Table": {
+        "checkpoints": [
+            {
+                "steps": 3499945,
+                "file_path": "results\\b076_focused_maze5fromrun\\Dynamic Table\\Dynamic Table-3499945.onnx",
+                "reward": 0.9259948598751281,
+                "creation_time": 1712858732.3053038,
+                "auxillary_file_paths": [
+                    "results\\b076_focused_maze5fromrun\\Dynamic Table\\Dynamic Table-3499945.pt"
+                ]
+            },
+            {
+                "steps": 3999989,
+                "file_path": "results\\b076_focused_maze5fromrun\\Dynamic Table\\Dynamic Table-3999989.onnx",
+                "reward": 1.118292350457826,
+                "creation_time": 1712859898.3837361,
+                "auxillary_file_paths": [
+                    "results\\b076_focused_maze5fromrun\\Dynamic Table\\Dynamic Table-3999989.pt"
+                ]
+            },
+            {
+                "steps": 4499966,
+                "file_path": "results\\b076_focused_maze5fromrun\\Dynamic Table\\Dynamic Table-4499966.onnx",
+                "reward": 1.0713125522834834,
+                "creation_time": 1712861061.8222895,
+                "auxillary_file_paths": [
+                    "results\\b076_focused_maze5fromrun\\Dynamic Table\\Dynamic Table-4499966.pt"
+                ]
+            },
+            {
+                "steps": 4999972,
+                "file_path": "results\\b076_focused_maze5fromrun\\Dynamic Table\\Dynamic Table-4999972.onnx",
+                "reward": null,
+                "creation_time": 1712862226.519222,
+                "auxillary_file_paths": [
+                    "results\\b076_focused_maze5fromrun\\Dynamic Table\\Dynamic Table-4999972.pt"
+                ]
+            },
+            {
+                "steps": 5334567,
+                "file_path": "results\\b076_focused_maze5fromrun\\Dynamic Table\\Dynamic Table-5334567.onnx",
+                "reward": 1.1942363166278007,
+                "creation_time": 1712863016.7519813,
+                "auxillary_file_paths": [
+                    "results\\b076_focused_maze5fromrun\\Dynamic Table\\Dynamic Table-5334567.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 5334567,
+            "file_path": "results\\b076_focused_maze5fromrun\\Dynamic Table.onnx",
+            "reward": 1.1942363166278007,
+            "creation_time": 1712863016.7519813,
+            "auxillary_file_paths": [
+                "results\\b076_focused_maze5fromrun\\Dynamic Table\\Dynamic Table-5334567.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.30.0",
+        "torch_version": "2.2.1"
+    }
+}

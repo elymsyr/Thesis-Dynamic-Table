@@ -1,0 +1,549 @@
+<html><head>
+    <title>072Colab</title>
+    <link href="..\style.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="top-left">
+      <a onclick="scrollToTop()">Go to Top</a>
+      <a onclick="shrunk()">Shrunk</a>
+      <a onclick="readCurrentHTMLFileAndSave()">Save</a>
+      <a href="../index.html" id="header">Back to Versions</a>
+    </div><br><br><br>
+    <h1>
+      <a class="content-header" onclick="toggleAccordion(this, 1)">072Colab</a>
+    </h1>
+    <div class="accordion-content">
+      <ol>
+        <li>
+          <a href="#notes" id="OLnotes">Notes</a>
+        </li>
+        <li id="OLreward">
+          <a href="#reward">Reward</a>
+        </li>
+        <li id="OLhowworks">
+          <a href="#howworks">How Works</a>
+        </li>
+        <li id="OLgraphs">
+          <a href="#graphs">Graphs</a>
+        </li>
+      </ol>
+    </div>
+    <b class="content-header underline" onclick="toggleAccordion(this, 2)">
+      <h2>
+        <a id="notes">Notes</a>
+      </h2>
+    </b>
+    <div class="accordion-content active" id="textnotes">
+      <textarea cols="50" id="textAreaNotes" placeholder="Type or insert text here..." rows="5" style="width: 190px; height: 28px;"></textarea>
+      <button onclick="createParagraph('textnotes', 'textAreaNotes')">Insert Text</button>
+    <div><p>20x20 Table<br>48 Observations<br>36 Actions<br><br>Reward Function: 0.001 * (directionPoint*1.3*speed + heightPoint*0.5+ distancePoint*0.11);<br><br>        directionPoint = Vector3.Dot(productRigidbody.velocity.normalized, (target.transform.localPosition - product.transform.localPosition).normalized);<br>        var heightPoint = product.transform.localPosition.y-7.5f;<br>        if (heightPoint&gt;8.5f){heightPoint *= -1;}<br>        var distancePoint = startDist-targetCloseness();<br>        float reward = 0.001f * (directionPoint*directionFactor*productRigidbody.velocity.magnitude + heightPoint*heightFactor + distancePoint*distanceFactor);<br>        AddReward(reward);<br><br>direction point : A score given to movement direction of the product. Increased if the movement direction is to target.<br>heighpoint : The proximity of the products height in the y-plane to point 7.5f<br>targetCloseness : Distance between product and target<br>directionFactor : Constant (1.3f)<br>heightFactor : Constant (0.5f)<br>distanceFactor : Constant (0.11f)<br><br>Observation Space:<br><br>- Y positions of moving pieces<br>- Locations of the product and the target and the distance between them<br>- Table Borders<br>- Scale of the product (The scale can be changed randomly)</p><button class="deleteButton">Delete</button></div></div>
+    <b>
+      <h2 id="reward">
+        <a class="content-header" onclick="toggleAccordion(this, 3)">Principle &amp; Reward</a>
+      </h2>
+    </b>
+    <div class="accordion-content" id="textreward">
+      <textarea cols="50" id="textAreaReward" placeholder="Type or insert text here..." rows="5"></textarea>
+      <button onclick="createParagraph('textreward', 'textAreaReward')">Insert Text</button>
+    </div>
+    <b>
+      <h2 id="howworks">
+        <a class="content-header" onclick="toggleAccordion(this, 4)">How Works</a>
+      </h2>
+    </b>
+    <div class="accordion-content">
+      <div>
+        <ul>
+          <li style="display:flex;justify-content: flex-start;">
+            <a href="..\..\Versions\072Colab\Files\Scripts\configuration.yaml" target="_blank">configuration.yaml</a>
+            <p class="underline" onclick="toggleAccordion(this, 5)" style="margin:0px 10px;color:#919191;">show code</p>
+          </li>
+          <textarea class="accordion-content" cols="120" readonly="readonly" rows="20">default_settings: null
+behaviors:
+  Dynamic Table:
+    trainer_type: ppo
+    hyperparameters:
+      batch_size: 1024
+      buffer_size: 10240
+      learning_rate: 0.0003
+      beta: 0.005
+      epsilon: 0.2
+      lambd: 0.95
+      num_epoch: 3
+      shared_critic: false
+      learning_rate_schedule: linear
+      beta_schedule: linear
+      epsilon_schedule: linear
+    checkpoint_interval: 500000
+    network_settings:
+      normalize: false
+      hidden_units: 128
+      num_layers: 2
+      vis_encode_type: simple
+      memory: null
+      goal_conditioning_type: hyper
+      deterministic: false
+    reward_signals:
+      extrinsic:
+        gamma: 0.99
+        strength: 1.0
+        network_settings:
+          normalize: false
+          hidden_units: 128
+          num_layers: 2
+          vis_encode_type: simple
+          memory: null
+          goal_conditioning_type: hyper
+          deterministic: false
+    init_path: null
+    keep_checkpoints: 5
+    even_checkpoints: false
+    max_steps: 10000000
+    time_horizon: 64
+    summary_freq: 10000
+    threaded: false
+    self_play: null
+    behavioral_cloning: null
+env_settings:
+  env_path: /content/MLProject/Jupyter/b072/b072.x86_64
+  env_args: null
+  base_port: 5004
+  num_envs: 10
+  num_areas: 1
+  timeout_wait: 60
+  seed: -1
+  max_lifetime_restarts: 10
+  restarts_rate_limit_n: 1
+  restarts_rate_limit_period_s: 60
+engine_settings:
+  width: 84
+  height: 84
+  quality_level: 5
+  time_scale: 20.0
+  target_frame_rate: -1
+  capture_frame_rate: 60
+  no_graphics: true
+environment_parameters: null
+checkpoint_settings:
+  run_id: ColabTest2
+  initialize_from: null
+  load_model: false
+  resume: false
+  force: false
+  train_model: false
+  inference: false
+  results_dir: results
+torch_settings:
+  device: cuda
+debug: false
+</textarea>
+          <li style="display:flex;justify-content: flex-start;">
+            <a href="..\..\Versions\072Colab\Files\Scripts\dynamicTable.cs" target="_blank">dynamicTable.cs</a>
+            <p class="" onclick="toggleAccordion(this, 6)" style="margin:0px 10px;color:#919191;">show code</p>
+          </li>
+          <textarea class="accordion-content active" cols="120" readonly="readonly" rows="20">public class ChildObjectManagerv071 : Agent
+{
+    [SerializeField]
+    [Tooltip("Observation Space = size*size+11\nAction Space = size*size")]
+    [Range(4, 12)]
+    private int size = 7;
+    [SerializeField]
+    private bool showUI = false;  
+    [SerializeField]
+    [Range(0f, 20f)]
+    private float move_speed = 8f;  
+    [SerializeField]
+    [Range(0, 2000)]
+    private int actionLimit = 800;
+    [SerializeField]
+    private GameObject env;
+    [SerializeField]
+    private GameObject product;
+    [SerializeField]
+    private GameObject target;
+    [SerializeField]
+    private GameObject text;
+    [SerializeField]
+    private float[] wallBorders = {-41.75f,-24.65f,16.35f,-1.15f};
+    [SerializeField]
+    [Range(0f, 1f)]
+    private float directionFactor = 1f;
+    [SerializeField]
+    [Range(0f, 1f)]
+    private float heightFactor = 0.2f;     
+    private Transform[] activeArray;
+    private float scale = 4.3f;
+    private GameObject parentObject;
+    private TextMeshPro ui;
+    private int rows = 15;
+    private int columns = 15;
+    private Vector3 target_start;
+    private Vector3 product_start;
+    private float minY = 0f;
+    private float maxY = 3.1f;
+    private Transform[,] childArray;
+    private Rigidbody productRigidbody;
+    private int actionCount = 0;
+    private Vector3[,] tableLoc;
+    private int gameCount = 0;
+    private float legalY;
+    private int win = 0;
+    private float directionPoint = 0;
+    private void Awake()
+    {
+        activeArray = new Transform[size*size];
+        if (text != null)
+        {
+            ui = text.GetComponent&lt;TextMeshPro&gt;();
+        }
+        productRigidbody = product.GetComponent&lt;Rigidbody&gt;();
+        legalY = product.transform.localPosition.y;
+        parentObject = transform.gameObject;
+        if (parentObject != null)
+        {
+            GetChildObjects();
+        }
+        else
+        {
+            UnityEngine.Debug.LogError("Parent object not assigned!");
+        }
+        GetActiveArray();
+    }
+    private void GetChildObjects()
+    {
+        childArray = new Transform[rows, columns];
+        tableLoc = new Vector3[rows, columns];
+        int index = 0;
+
+        foreach (Transform child in parentObject.transform)
+        {
+            int i = index / rows;
+            int j = index % columns;
+            childArray[i, j] = child;
+            tableLoc[i, j] = child.transform.localPosition;
+            index++;
+        }
+    }
+    private void updateUI()
+    {
+        ui.text = "Product States\nDirection: "+directionPoint+"\nPosition: "+product.transform.localPosition+"\nDistance to Target: "+targetCloseness()+"\nReward: "+GetCumulativeReward()+"\nAction Count: "+actionCount+"\nGame Count: "+gameCount+"\nWin Count: "+win+"\nActive Parts Map: \n"+ActiveMap();
+    }
+    public void triggerReset(){
+        AddReward(-1f);
+        EndEpisode();
+    }
+    public void winReset(){
+        win++;
+        AddReward(1f);
+        EndEpisode();
+    }
+    private float targetCloseness()
+    {
+        return Vector3.Distance(product.transform.localPosition, target.transform.localPosition);
+    }
+    private float GetDistanceToChild(Transform child)
+    {
+        float distance = Vector3.Distance(env.transform.InverseTransformPoint(new Vector3(child.position.x, 0f, child.position.z)), env.transform.InverseTransformPoint(new Vector3(product.transform.position.x, 0f, product.transform.position.z)));
+        return distance;
+    }    
+    private int[] FindClosestTransform()
+    {
+        int[] closestPosition = new int[2];
+        float closestDistance = Mathf.Infinity;
+
+        for (int i = 0; i &lt; rows; i++)
+        {
+            for (int j = 0; j &lt; columns; j++)
+            {
+                Transform transform = childArray[i, j];
+                if (transform != null)
+                {
+                    float distance = GetDistanceToChild(transform);
+                    if (distance &lt; closestDistance)
+                    {
+                        closestDistance = distance;
+                        closestPosition[0] = i;
+                        closestPosition[1] = j;
+                    }
+                }
+            }
+        }
+
+        return closestPosition;
+    }
+    private void GetActiveArray()
+    {
+        int[] centerPoint = FindClosestTransform();
+
+        int startX = centerPoint[0] - size / 2;
+        int startY = centerPoint[1] - size / 2;
+        int index = 0;
+        for (int i = 0; i &lt; size; i++)
+        {
+            for (int j = 0; j &lt; size; j++)
+            {
+                if(IsIndexValid(startX + i, startY + j) &amp;&amp; childArray[startX + i, startY + j] != null){
+                    activeArray[index] = childArray[startX + i, startY + j];
+                }
+                else{
+                    activeArray[index] = null;
+                }
+                index++;
+            }
+        }
+    }
+    private bool IsIndexValid(int rowIndex, int colIndex)
+    {
+        return rowIndex &gt;= 0 &amp;&amp; rowIndex &lt; rows &amp;&amp; colIndex &gt;= 0 &amp;&amp; colIndex &lt; columns;
+    }
+    private string ActiveMap(){
+        // GetCircularArray(radius);
+        string arrayString = "";
+        for (int i = 0; i &lt; size*size; i++)
+        {
+            if (activeArray[i] != null){arrayString += "O ";}
+            else{arrayString += "X ";}
+            if ((i+1)%size == 0){arrayString += "\n";}
+        }
+        return arrayString;       
+    }    
+    public override void OnActionReceived(ActionBuffers actions)
+    {
+        if (actionLimit &lt; actionCount)
+        {
+            AddReward(-1f);
+            EndEpisode();
+        }
+        actionCount++;
+        int index = 0;
+        int movingPartsIndex = 0;
+
+        GetActiveArray();
+
+        foreach (Transform child in childArray)
+        {
+            if (child != null)
+            {
+                if (Array.IndexOf(activeArray, child) != -1){
+                    float newYPosition = child.localPosition.y + actions.ContinuousActions[movingPartsIndex] * move_speed * Time.deltaTime;
+                    newYPosition = Mathf.Clamp(newYPosition, minY, maxY);
+                    child.localPosition = new Vector3(child.localPosition.x, newYPosition, child.localPosition.z);
+                    movingPartsIndex++;
+                }
+                else
+                {
+                    int i = index / rows;
+                    int j = index % columns;
+                    child.transform.localPosition = tableLoc[i, j];
+                }
+                index++;
+            }
+            else{
+                UnityEngine.Debug.Log("Null child founded!");
+            }
+        }
+
+        directionPoint = Vector3.Dot(productRigidbody.velocity.normalized, (target.transform.localPosition - product.transform.localPosition).normalized);
+        float reward = 0.001f * (directionPoint*directionFactor + (product.transform.localPosition.y-40)*heightFactor);
+        AddReward(reward);
+
+        if (showUI)
+        {
+            updateUI();
+        }
+    }
+    public override void OnEpisodeBegin()
+    {
+        productRigidbody.velocity = Vector3.zero;
+        do {
+            target_start = randomPos();
+            product_start = randomPos();
+        } while (Vector3.Distance(target_start, product_start) &lt; 5);
+
+        target.transform.localPosition = target_start;
+        product.transform.localPosition = product_start;
+
+        actionCount = 0;
+        for (int i = 0; i &lt; rows; i++)
+        {
+            for (int j = 0; j &lt; columns; j++)
+            {
+                childArray[i,j].transform.localPosition = tableLoc[i,j];
+            }
+        }
+        gameCount++;
+    }
+    public override void CollectObservations(VectorSensor sensor)
+    {
+        foreach (Transform child in activeArray)
+        {
+            if (child != null)
+            {
+                sensor.AddObservation(child.localPosition.y);
+            }
+            else
+            {
+                sensor.AddObservation(0);
+            }
+        }
+
+        sensor.AddObservation(product.transform.localPosition);
+        sensor.AddObservation(target.transform.localPosition);
+        sensor.AddObservation(targetCloseness());
+        sensor.AddObservation(wallBorders[0]+scale/2);
+        sensor.AddObservation(wallBorders[1]-scale/2);
+        sensor.AddObservation(wallBorders[2]-scale/2);
+        sensor.AddObservation(wallBorders[3]+scale/2);
+    }
+    private Vector3 randomPos(){
+        return new Vector3(UnityEngine.Random.Range(wallBorders[0]+scale/2+0.1f, wallBorders[1]-scale/2-0.1f), legalY, UnityEngine.Random.Range(wallBorders[3]+scale/2+0.1f, wallBorders[2]-scale/2-0.1f));
+    }
+    public override void Heuristic(in ActionBuffers actionsOut)
+    {
+        ActionSegment&lt;float&gt; continuousActions = actionsOut.ContinuousActions;
+        for (int i = 0; i &lt; size*size; i++)
+        {
+            continuousActions[i] = UnityEngine.Random.Range(-1f, 1f);
+        }       
+    }
+}
+
+</textarea>
+        </ul>
+      </div>
+    </div>
+    <b class="content-header">
+      <h2 id="graphs">
+        <a>Graphs</a>
+      </h2>
+    </b>
+    <div>
+      <h3>Environment:</h3>
+      <div style="display: flex;flex-wrap: wrap;gap: .1px;width: 100%;align-items: center;text-align: center;">
+        <div class="tables" style="width: 26%;padding: 0px;">
+          <h4 style="margin: 0px 0px 12px 0px;">Cumulative Reward</h4>
+          <img src="..\..\Versions\072Colab\Environment\CumulativeReward__072Colab.png" style="margin: 0;border:0;" width="100%">
+        </div>
+        <div class="tables" style="width: 26%;padding: 0px;">
+          <h4 style="margin: 0px 0px 12px 0px;">Episode Length</h4>
+          <img src="..\..\Versions\072Colab\Environment\EpisodeLength__072Colab.png" style="margin: 0;border:0;" width="100%">
+        </div>
+      </div>
+      <h3>Losses:</h3>
+      <div style="display: flex;flex-wrap: wrap;gap: .1px;width: 100%;align-items: center;text-align: center;">
+        <div class="tables" style="width: 26%;padding: 0px;">
+          <h4 style="margin: 0px 0px 12px 0px;">Policy Loss</h4>
+          <img src="..\..\Versions\072Colab\Losses\PolicyLoss__072Colab.png" style="margin: 0;border:0;" width="100%">
+        </div>
+        <div class="tables" style="width: 26%;padding: 0px;">
+          <h4 style="margin: 0px 0px 12px 0px;">Value Loss</h4>
+          <img src="..\..\Versions\072Colab\Losses\ValueLoss__072Colab.png" style="margin: 0;border:0;" width="100%">
+        </div>
+      </div>
+      <h3>Policy:</h3>
+      <div style="display: flex;flex-wrap: wrap;gap: .1px;width: 100%;align-items: center;text-align: center;">
+        <div class="tables" style="width: 26%;padding: 0px;">
+          <h4 style="margin: 0px 0px 12px 0px;">Beta</h4>
+          <img src="..\..\Versions\072Colab\Policy\Beta__072Colab.png" style="margin: 0;border:0;" width="100%">
+        </div>
+        <div class="tables" style="width: 26%;padding: 0px;">
+          <h4 style="margin: 0px 0px 12px 0px;">Entropy</h4>
+          <img src="..\..\Versions\072Colab\Policy\Entropy__072Colab.png" style="margin: 0;border:0;" width="100%">
+        </div>
+        <div class="tables" style="width: 26%;padding: 0px;">
+          <h4 style="margin: 0px 0px 12px 0px;">Epsilon</h4>
+          <img src="..\..\Versions\072Colab\Policy\Epsilon__072Colab.png" style="margin: 0;border:0;" width="100%">
+        </div>
+        <div class="tables" style="width: 26%;padding: 0px;">
+          <h4 style="margin: 0px 0px 12px 0px;">Extrinsic Reward</h4>
+          <img src="..\..\Versions\072Colab\Policy\ExtrinsicReward__072Colab.png" style="margin: 0;border:0;" width="100%">
+        </div>
+        <div class="tables" style="width: 26%;padding: 0px;">
+          <h4 style="margin: 0px 0px 12px 0px;">Extrinsic Value Estimate</h4>
+          <img src="..\..\Versions\072Colab\Policy\ExtrinsicValueEstimate__072Colab.png" style="margin: 0;border:0;" width="100%">
+        </div>
+        <div class="tables" style="width: 26%;padding: 0px;">
+          <h4 style="margin: 0px 0px 12px 0px;">Learning Rate</h4>
+          <img src="..\..\Versions\072Colab\Policy\LearningRate__072Colab.png" style="margin: 0;border:0;" width="100%">
+        </div>
+      </div>
+    </div>
+    <script src="..\script.js" type="text/javascript"></script>
+  <!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body></html>

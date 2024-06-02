@@ -1,0 +1,36 @@
+Mono path[0] = 'C:/Users/orhun/OneDrive/Belgeler/GitHub/Dynamic-Table/Builds/b076_focused_maze3/DynamicTable_Data/Managed'
+Mono config path = 'C:/Users/orhun/OneDrive/Belgeler/GitHub/Dynamic-Table/Builds/b076_focused_maze3/MonoBleedingEdge/etc'
+Found 1 interfaces on host : 0) 192.168.1.3
+Player connection [15296] Multi-casting "[IP] 192.168.1.3 [Port] 55001 [Flags] 2 [Guid] 342136454 [EditorId] 1496456222 [Version] 1048832 [Id] WindowsPlayer(2,EREN) [Debug] 0 [PackageName] WindowsPlayer [ProjectName] DynamicTable" to [225.0.0.222:54997]...
+
+[Physics::Module] Initialized MultithreadedJobDispatcher with 7 workers.
+Initialize engine version: 2022.3.20f1 (61c2feb0970d)
+[Subsystems] Discovering subsystems at path C:/Users/orhun/OneDrive/Belgeler/GitHub/Dynamic-Table/Builds/b076_focused_maze3/DynamicTable_Data/UnitySubsystems
+Forcing GfxDevice: Null
+GfxDevice: creating device client; threaded=0; jobified=0
+NullGfxDevice:
+    Version:  NULL 1.0 [1.0]
+    Renderer: Null Device
+    Vendor:   Unity Technologies
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.339 seconds
+- Finished resetting the current domain, in  0.002 seconds
+ERROR: Shader Sprites/Default shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Microsoft Media Foundation video decoding to texture disabled: graphics device is Null, only Direct3D 11 and Direct3D 12 (only on desktop) are supported for hardware-accelerated video decoding.
+ERROR: Shader Sprites/Mask shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+ERROR: Shader Legacy Shaders/VertexLit shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+WARNING: Shader Unsupported: 'Standard' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+ERROR: Shader Standard shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+WARNING: Shader Unsupported: 'Standard' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+WARNING: Shader Unsupported: 'Standard (Specular setup)' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+ERROR: Shader Standard (Specular setup) shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+WARNING: Shader Unsupported: 'Standard (Specular setup)' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+UnloadTime: 2.135200 ms
