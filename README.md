@@ -17,7 +17,7 @@
 ## <a name = "abstrach">About</a>
 This study explores the application of deep reinforcement learning to the 'Dynamic Table' model, designed for efficient manipulation of objects. Reinforcement learning, a field that has received significant attention within machine learning and AI, enables an agent to learn optimal strategies for sequential decision-making tasks through trial and error. The Dynamic Table, trained using these advanced techniques, shows promise in various domains, including logistics, industrial production, gaming, andhome automation. The model's performance was thoroughly assessed, demonstratingrobustness in object placement and movement  capabilities within constrainedenvironments. The results underline the potential of the model to improve robotic manipulation tasks, laying a solid foundation for future research and practical implementations. Further studies could extend these findings to more complex real- world scenarios, emphasizing the practical applications of the Dynamic Table model in diverse fields.
 
-## Usage <a name = "usage">Usage</a>
+## <a name = "usage">Usage</a>
 
 ### <a name = "prerequisites">Prerequisites</a>
 Download ML Agents package from Unity Package Manager.
