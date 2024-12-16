@@ -20,15 +20,23 @@ This study explores the application of deep reinforcement learning to the 'Dynam
 ## <a name = "usage">Usage</a>
 
 ### <a name = "prerequisites">Prerequisites</a>
+
 Download ML Agents package from Unity Package Manager.
+
 Create a  conda (with python version 3.9.13) venv.
-Install [requirements.txt](Docs/requirements.txt).
+
+Install [requirements.txt](requirements.txt).
+
 Upgrade and add packages to conda venv:
+
 `pip install --upgrade setuptools pip wheel`
 `pip install nvidia-pyindex`
 `conda install cuda -c nvidia/label/cuda-11.8.0`
+
 Download Cuda11.8 and Visual Studio (I use 2019. 2022 does not work.).
+
 To test cuda, open cmd, type python, import torch, `print(torch.cuda.is_available())`, expect true
+
 Test the mlagents by writing on cmd `mlagents-learn -h` after activating the environment.
 
 
